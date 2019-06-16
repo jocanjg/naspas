@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <!-- Bootstrap CDN -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <title></title>
+    <style media="screen">
+    html, body{
+      margin:0;
+      padding:0;
+      background-color:#F5F5F5;
+      z-index: -1;
+      overflow-x: hidden;
+  }
+
+  #canvas{
+
+    z-index: 2;
+      margin:0 auto;
+      display: flex;
+  }
+    /* body {
+background-color: #ecf0f1;
+} */
+
+.navbar-default {
+max-height: 40px;
+background-color: #3c8dbc !important;
+border-color: #2980b9;
+color: #ecf0f1;
+}
+
+.navbar-right {
+float: right;
+}
+
+.navbar-default .navbar-brand {
+color: #ecf0f1 !important;
+}
+
+.navbar-default .navbar-nav>li>a {
+color: #ecf0f1 !important;
+}
+
+.col-xs-6 {
+float: none !important;
+margin-left: auto;
+margin-right: auto;
+}
+
+.center-block {
+display: block;
+overflow: auto;
+margin-left: auto;
+margin-right: auto;
+margin-top: 100px;
+margin-bottom: 20px;
+}
+
+.btn-group-wrap {
+text-align: center;
+margin-top: 30px;
+}
+
+div.btn-group {
+margin: 0 auto;
+text-align: center;
+width: inherit;
+display: inline-block;
+padding-right: 5px;
+padding-left: 5px;
+}
+
+.btn-primary {
+color: #ecf0f1 !important;
+background-color: #2980b9 !important;
+border-color: #2980b9 !important;
+}
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+input {
+	width: 100%;
+	padding: 20px;
+}
+
+.search-form {
+	max-width: 400px;
+	margin: 50px auto;
+}
+
+input.search {
+	margin: 0;
+	text-align: center;
+	outline: 0;
+	border: 10px solid #f7f7f7;
+	width: 120%;
+	left: -10%;
+	position: relative;
+	top: 0px;
+	z-index: 2;
+	border-radius: 16px;
+	font-size: 30px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.19);
+}
+
+.suggestions {
+	margin-top: 15px;
+	padding: 0;
+	position: relative;
+	/*perspective: 20px;*/
+}
+
+.suggestions li {
+	background: white;
+	list-style: none;
+	border: 0px solid #512da8;
+	border-radius: 8px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.26);
+	margin: 2px 0 0 0;
+	padding: 10px;
+	transition: background 0.2s;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-transform: capitalize;
+}
+
+span.population {
+	font-size: 15px;
+}
+
+.hl {
+	background: #d1c4e9;
+}
+
+    </style>
+  </head>
+<body>
+
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
+          <!-- <li><a href="#">+ Adam</a></li> -->
+          <!-- <li><a href="#Mail">Gmail</a></li> -->
+          <li><a href="#contact">About</a></li>
+          <li><a href="#contact"><i class="fa fa-th"></i></a></li>
+          <li><a href="#contact"><i class="fa fa-bell"></i></a></li>
+          <li><a href="#contact"><i class="fa fa-share-alt"></i></a></li>
+          <li><a href="#"><i class="fa fa-user"></i></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <canvas id="canvas" style="position:fixed;">Your browser doesn't support canvas</canvas>
+    <div class="row">
+      <div class="span4"></div>
+      <div class="span4" ><img class="center-block"  src="https://png.pngtree.com/templates_detail/20180926/pet-shop-dogs-animal-health-care-png_34189.jpg" width="200" height="200" alt="Google" id="logo" style="z-index: 4; position: relative; border-radius:10px;"></div>
+      <div class="span4"></div>
+    </div>
+<!--
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="input-group">
+          <input type="text" class="form-control">
+          <span class="input-group-btn">
+                  <button class="btn btn-primary" type="button"><i class="fa fa-microphone"></i></button>
+                </span>
+        </div>
+      </div>
+    </div> -->
+    <div class="btn-group-wrap" style="z-index: 4; position: relative;">
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" id="google-search">Register and Help</button>
+      </div>
+      <div class="btn-group">
+        <button type="button" class="btn btn-primary" id="feeling-lucky">I'm registrated</button>
+      </div>
+    </div>
+    <form class="search-form">
+	<input type="text" class="search" placeholder="City or State">
+	<ul class="suggestions" style="z-index: 4; position: relative;">
+		<li>Filter for a city</li>
+		<li>or a state</li>
+	</ul>
+</form>
+
+    <div id="footer">
+      <div class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+        <div class="container">
+
+          <ul class="nav navbar-nav navbar-left">
+            <li><a href="#">Advertising</a></li>
+            <li><a href="#">Business</a></li>
+          </ul>
+
+          <ul class="nav navbar-nav navbar-right">
+
+            <li><a href="#">Privacy</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Settings</a></li>
+
+          </ul>
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript">
+const endpoint = "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
+
+const cities = [];
+
+// Fetching Data from the JSON link
+fetch(endpoint)
+.then(Blob => Blob.json())
+.then(data => cities.push(...data));
+
+// Function to find matches to the query we type in the input Box
+function findMatches(wordToMatch, cities) {
+return cities.filter(place => {
+  const regex = new RegExp(wordToMatch, "gi"); // g: Global ; i: insensitive
+  return place.city.match(regex) || place.state.match(regex);
+});
+}
+
+function numberWithCommas(x) {
+return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// funtion to display matching results
+function displayMatch() {
+const matchArray = findMatches(this.value, cities);
+const html = matchArray
+  .map(place => {
+    const regex = new RegExp(this.value, "gi");
+    const cityName = place.city.replace(
+      regex,
+      `<span class="hl">${this.value}</span>`
+    );
+    const stateName = place.state.replace(
+      regex,
+      `<span class="hl">${this.value}</span>`
+    );
+
+    return `
+          <li>
+              <span class="name"> ${cityName}, ${stateName}</span>
+              <span class="population">${numberWithCommas(
+                                place.population
+                              )}</span>
+          </li>
+      `;
+  })
+  .join("");
+
+suggestions.innerHTML = html;
+}
+
+const searchInput = document.querySelector(".search");
+const suggestions = document.querySelector(".suggestions");
+
+searchInput.addEventListener("change", displayMatch);
+searchInput.addEventListener("keyup", displayMatch);
+
+</script>
+
+
+
+
+<script type="text/javascript">
+var _createClass = function () {function defineProperties(target, props) {for (var i = 0; i < props.length; i++) {var descriptor = props[i];descriptor.enumerable = descriptor.enumerable || false;descriptor.configurable = true;if ("value" in descriptor) descriptor.writable = true;Object.defineProperty(target, descriptor.key, descriptor);}}return function (Constructor, protoProps, staticProps) {if (protoProps) defineProperties(Constructor.prototype, protoProps);if (staticProps) defineProperties(Constructor, staticProps);return Constructor;};}();function _classCallCheck(instance, Constructor) {if (!(instance instanceof Constructor)) {throw new TypeError("Cannot call a class as a function");}} /**
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       * Constants
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       */
+var TWO_PI = Math.PI * 2;
+
+/**
+                         * Returns a random integer between a given minimum and maximum value
+                         * @param min - The minimum value, can be negative
+                         * @param max - The maximum value, can be negative
+                         */
+function getRandomInt(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+/**
+ * Application Class
+ */var
+Application = function () {
+  /**
+                          * Application constructor
+                          */
+  function Application() {var _this = this;_classCallCheck(this, Application);
+      this.canvas = document.getElementById("canvas");
+      this.context = this.canvas.getContext("2d");
+      this.width = this.canvas.width = window.innerWidth;
+      this.height = this.canvas.height = window.innerHeight;
+
+      //Set an initial mouse position so the eyes have something to look at
+      this.mousePosition = {
+          x: this.width / 2,
+          y: this.height / 2 };
+
+
+      this.ghosts = [];
+      this.numberOfGhosts = Math.round((this.width + this.height) / 200);
+
+      //Resize listener for the canvas to fill browser window dynamically
+      window.addEventListener('resize', function () {return _this.resizeCanvas();}, false);
+      window.addEventListener('mousemove', function (e) {return _this.mouseMove(e);}, false);
+      window.addEventListener('touchmove', function (e) {return _this.touchMove(e);}, false);
+  }
+
+  /**
+     * Simple resize function. Reinitializing everything on the canvas while changing the width/height
+     */_createClass(Application, [{ key: "resizeCanvas", value: function resizeCanvas()
+      {
+          this.width = this.canvas.width = window.innerWidth;
+          this.height = this.canvas.height = window.innerHeight;
+          this.numberOfGhosts = Math.round((this.width + this.height) / 200);
+
+          //Empty the previous container and fill it again with new Ghost objects
+          this.ghosts = [];
+          this.initializeGhosts();
+      }
+
+      /**
+         * Create a number of Ghost objects based on the width and height of the screen
+         * @return void
+         */ }, { key: "initializeGhosts", value: function initializeGhosts()
+      {
+          for (var i = 0; i < this.numberOfGhosts; i++) {
+              //Initialize a new instance of the Ghost class
+              var ghost = new Ghost(
+              getRandomInt(0, this.width),
+              getRandomInt(0, this.height),
+              this.context);
+
+
+              //Initialize the Ghost object so it can create it's Eye objects
+              ghost.initialize();
+
+              //Add the Ghost object to our array of Ghost objects
+              this.ghosts.push(ghost);
+          }
+      }
+
+      /**
+         * Updates the application and every child of the application
+         * @return void
+         */ }, { key: "update", value: function update()
+      {
+          for (var i = 0; i < this.ghosts.length; i++) {
+              this.ghosts[i].update(this.mousePosition);
+          }
+      }
+
+      /**
+         * Renders the application and every child of the application
+         * @return void
+         */ }, { key: "render", value: function render()
+      {
+          //Clear the entire canvas every render
+          this.context.clearRect(0, 0, this.width, this.height);
+
+          //Trigger the render function on every child element
+          for (var i = 0; i < this.ghosts.length; i++) {
+              this.ghosts[i].render(this.context);
+          }
+      }
+
+      /**
+         * Update and render the application at least 60 times a second
+         * @return void
+         */ }, { key: "loop", value: function loop()
+      {var _this2 = this;
+          this.update();
+          this.render();
+
+          window.requestAnimationFrame(function () {return _this2.loop();});
+      }
+
+      /**
+         * Triggered every time the user moves his mouse, updates the mousePosition variable
+         * @param event - The browsers mousemove event object
+         */ }, { key: "mouseMove", value: function mouseMove(
+      event) {
+          this.mousePosition = {
+              x: event.clientX,
+              y: event.clientY };
+
+      }
+
+      /**
+         * Triggered every time the user touches the screen and moves his finger, updates the mousePosition variable
+         * @param event - The browsers touchmove event object
+         */ }, { key: "touchMove", value: function touchMove(
+      event) {
+          event.preventDefault();
+          this.mousePosition = {
+              x: event.touches[0].clientX,
+              y: event.touches[0].clientY };
+
+      } }]);return Application;}();
+
+
+/**
+                                     * Ghost Class
+                                     */var
+Ghost = function () {
+  /**
+                    * Ghost constructor
+                    * @param x - The horizontal position of this Ghost
+                    * @param y - The vertical position of this Ghost
+                    * @param context - The context from the canvas object of the Application
+                    */
+  function Ghost(x, y, context) {_classCallCheck(this, Ghost);
+      this.position = new Vector2D(x, y);
+      this.handPosition = new Vector2D(x, y);
+      this.context = context;
+
+      this.radius = 50;
+      this.eyeDistance = 10;
+      this.eyes = [];
+      this.bodyBounceAngle = getRandomInt(0, 100);
+      this.bounceDistance = 0.5;
+      this.bounceSpeed = 0.05;
+
+      this.velocity = new Vector2D(0, 0);
+      this.velocity.setLength(Math.random() * 2 + 1);
+      this.velocity.setAngle(Math.random() * TWO_PI);
+  }
+
+  /**
+     * Create two eyes for this ghost! Ghosts can't see without their eyes
+     * @return void
+     */_createClass(Ghost, [{ key: "initialize", value: function initialize()
+      {
+          this.eyes.push(new Eye(this.position.getX() - this.eyeDistance, this.position.getY() - 10));
+          this.eyes.push(new Eye(this.position.getX() + this.eyeDistance, this.position.getY() - 10));
+      }
+
+      /**
+         * Update the position of this object
+         * @param mousePosition - The current position of the users mouse, in x,y format
+         * @return void
+         */ }, { key: "update", value: function update(
+      mousePosition) {
+          //Randomize the velocity of this ghost
+          if (Math.random() < 0.01) {
+              this.velocity.setLength(Math.random() * 2 + 1);
+              this.velocity.setAngle(Math.random() * TWO_PI);
+          }
+
+          //Update the position of the ghost
+          //this.position.addTo(this.velocity);
+
+          //Calculate the amount of velocity for the way the body and the hands should bounce
+          var bodyBounce = new Vector2D(0, Math.sin(this.bodyBounceAngle) * this.bounceDistance);
+          var handBounce = new Vector2D(0, Math.sin(this.bodyBounceAngle + 10) * this.bounceDistance / 2);
+          this.position.addTo(bodyBounce);
+          this.handPosition.subtractFrom(handBounce);
+
+          //We want to position both eyes at the same angle, so we calculate the angle once and then pass it to every eye
+          var dx = mousePosition.x - this.position.getX();
+          var dy = mousePosition.y - this.position.getY();
+          var angle = Math.atan2(dy, dx);
+
+          //Trigger the update function on every child element
+          for (var i = 0; i < this.eyes.length; i++) {
+              this.eyes[i].update(bodyBounce, angle);
+          }
+
+          //Update the bounce angle by adding the speed
+          this.bodyBounceAngle += this.bounceSpeed;
+      }
+
+      /**
+         * Renders this Ghost object on the canvas
+         * @return void
+         */ }, { key: "render", value: function render()
+      {
+          //Draw the body of the ghost
+          this.context.fillStyle = "#3c8dbc";
+          this.context.beginPath();
+          this.context.arc(this.position.getX(), this.position.getY(), this.radius, 0, TWO_PI);
+          this.context.fill();
+
+          //Draw the left hand of the ghost
+          this.context.fillStyle = "#3c8dbc";
+          this.context.beginPath();
+          this.context.arc(this.handPosition.getX() - this.radius + 5, this.handPosition.getY() + 10, 10, 0, TWO_PI);
+          this.context.fill();
+
+          //Draw the right hand of the ghost
+          this.context.fillStyle = "#3c8dbc";
+          this.context.beginPath();
+          this.context.arc(this.handPosition.getX() + this.radius - 5, this.handPosition.getY() + 10, 10, 0, TWO_PI);
+          this.context.fill();
+
+          //Trigger the render function on every child element
+          for (var i = 0; i < this.eyes.length; i++) {
+              this.eyes[i].render(this.context);
+          }
+      } }]);return Ghost;}();
+
+
+/**
+                               * Eye Class
+                               */var
+Eye = function () {
+  /**
+                  * Eye constructor
+                  * @param x - The horizontal position of this Eye
+                  * @param y - The vertical position of this Eye
+                  */
+  function Eye(x, y) {_classCallCheck(this, Eye);
+      this.position = new Vector2D(x, y);
+      this.irisPosition = new Vector2D(x, y);
+      this.moveRadius = 20;
+      this.sizeRadius = 5;
+  }
+
+  /**
+     * Update the position of this object
+     * @param velocity - The velocity of which this eye is currently moving
+     * @param angle - The new angle directed at the users mouse position
+     * @return void
+     */_createClass(Eye, [{ key: "update", value: function update(
+      velocity, angle) {
+          this.position.addTo(velocity);
+
+          this.irisPosition.setX(this.position.getX() + Math.cos(angle) * this.moveRadius);
+          this.irisPosition.setY(this.position.getY() + Math.sin(angle) * this.moveRadius);
+      }
+
+      /**
+         * Renders this Eye object on the canvas
+         * @param context - The context from the canvas object of the Application
+         * @return void
+         */ }, { key: "render", value: function render(
+      context) {
+          //Draw the iris of the eye
+          context.fillStyle = "#ADD8E6";
+          context.beginPath();
+          context.arc(this.irisPosition.getX(), this.irisPosition.getY(), this.sizeRadius, 0, TWO_PI);
+          context.fill();
+      } }]);return Eye;}();
+
+
+/**
+                             * Vector2D class
+                             */var
+Vector2D = function () {
+  /**
+                       * Vector constructor
+                       */
+  function Vector2D(x, y) {_classCallCheck(this, Vector2D);
+      this._x = x;
+      this._y = y;
+  }
+
+  /**
+     * @param x
+     * @return void
+     */_createClass(Vector2D, [{ key: "setX", value: function setX(
+      x) {
+          this._x = x;
+      }
+
+      /**
+         * @param y
+         * @return void
+         */ }, { key: "setY", value: function setY(
+      y) {
+          this._y = y;
+      }
+
+      /**
+         * @return {number}
+         */ }, { key: "getX", value: function getX()
+      {
+          return this._x;
+      }
+
+      /**
+         * @return {number}
+         */ }, { key: "getY", value: function getY()
+      {
+          return this._y;
+      }
+
+      /**
+         * @param angle
+         * @return void
+         */ }, { key: "setAngle", value: function setAngle(
+      angle) {
+          var length = this.getLength();
+          this._x = Math.cos(angle) * length;
+          this._y = Math.sin(angle) * length;
+      }
+
+      /**
+         * @return {number}
+         */ }, { key: "getAngle", value: function getAngle()
+      {
+          return Math.atan2(this._y, this._x);
+      }
+
+      /**
+         * @param length
+         * @return void
+         */ }, { key: "setLength", value: function setLength(
+      length) {
+          var angle = this.getAngle();
+          this._x = Math.cos(angle) * length;
+          this._y = Math.sin(angle) * length;
+      }
+
+      /**
+         * @return {number}
+         */ }, { key: "getLength", value: function getLength()
+      {
+          return Math.sqrt(this._x * this._x + this._y * this._y);
+      }
+
+      /**
+         * @param {Vector} v2
+         * @return {Vector2D}
+         */ }, { key: "add", value: function add(
+      v2) {
+          return new Vector2D(this._x + v2.getX(), this._y + v2.getY());
+      }
+
+      /**
+         * @param {Vector} v2
+         * @return {Vector2D}
+         */ }, { key: "subtract", value: function subtract(
+      v2) {
+          return new Vector2D(this._x - v2.getX(), this._y - v2.getY());
+      }
+
+      /**
+         * @param value
+         * @return {Vector2D}
+         */ }, { key: "multiply", value: function multiply(
+      value) {
+          return new Vector2D(this._x * value, this._y * value);
+      }
+
+      /**
+         * @param value
+         * @return {Vector2D}
+         */ }, { key: "divide", value: function divide(
+      value) {
+          return new Vector2D(this._x / value, this._y / value);
+      }
+
+      /**
+         * @param v2
+         * @return void
+         */ }, { key: "addTo", value: function addTo(
+      v2) {
+          this._x += v2.getX();
+          this._y += v2.getY();
+      }
+
+      /**
+         * @param v2
+         * @return void
+         */ }, { key: "subtractFrom", value: function subtractFrom(
+      v2) {
+          this._x -= v2.getX();
+          this._y -= v2.getY();
+      }
+
+      /**
+         * @param value
+         * @return void
+         */ }, { key: "multiplyBy", value: function multiplyBy(
+      value) {
+          this._x *= value;
+          this._y *= value;
+      }
+
+      /**
+         * @param value
+         * @return void
+         */ }, { key: "divideBy", value: function divideBy(
+      value) {
+          this._x /= value;
+          this._y /= value;
+      } }]);return Vector2D;}();
+
+
+/**
+                                  * Onload function is executed whenever the page is done loading, initializes the application
+                                  */
+window.onload = function () {
+  //Create a new instance of the application
+  var application = new Application();
+
+  //Initialize the Ghosts objects
+  application.initializeGhosts();
+
+  //Start the initial loop function for the first time
+  application.loop();
+};
+</script>
+</body>
+</html>
