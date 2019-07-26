@@ -8,7 +8,7 @@
           @php
             $stringFormat =  strtolower(str_replace(' ', '', $item));
           @endphp
-          <label for="input<?=$stringFormat?>" class="col-md-12 control-label">Find animal by entering chip number</label>
+          <label for="input<?=$stringFormat?>" class="col-md-12 control-label"></label>
           <div class="col-sm-12">
             <input value="{{isset($oldVals) ? $oldVals[$index] : ''}}" type="text" class="form-control" name="<?=$stringFormat?>" id="input<?=$stringFormat?>" placeholder="{{$item}}">
           </div>

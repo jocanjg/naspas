@@ -2,8 +2,8 @@
   <footer class="main-footer">
     <!-- To the right -->
     <div class="pull-right hidden-xs">
-      Anything you want
+      Podrška
     </div>
     <!-- Default to the left -->
-    <strong>Copyright &copy; 2018 <a href="#">Company</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2019 <a href="#">Naspas</a>.</strong> Sva prava zadržava.
   </footer>

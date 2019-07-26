@@ -7,10 +7,10 @@
     <div class="row">
 
         <div class="col-sm-4">
-          <h3 class="box-title">List of Pets</h3>
-          <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur</p>
-          <li>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</li>
-          <li>Nulla consectetur massa in sem commodo, eget convallis nibh hendrerit.</li>
+          <h3 class="box-title">Lista životinja</h3>
+          <p>Pretraži bazu pomoću čipa</p>
+          <li>U slučaju da ne postoji traženi pas ili mačka, klikni na Dodaj dugme</li>
+          <li>Brisanje podataka iz baze nije dozvoljeno. Unešene greške ukloniće tehnička podrška</li>
 
         </div>
 
@@ -35,8 +35,8 @@
         <div class="col-sm-4">
         <form method="POST" action="{{ route('animals.search') }}">
           {{ csrf_field() }}
-            @component('layouts.search', ['title' => 'Search'])
-             @component('layouts.two-cols-search-row', ['items' => ['Chip'],
+            @component('layouts.search', ['title' => 'Pretraga'])
+             @component('layouts.two-cols-search-row', ['items' => ['Broj čipa'],
              'oldVals' => [isset($searchingVals) ? $searchingVals['chip'] : '']])
              @endcomponent
            @endcomponent
@@ -44,7 +44,7 @@
     </div>
 
     <div class="col-sm-4">
-      <a class="btn btn-lg btn-primary" href="{{ route('animals.create') }}">Add new</a>
+      <a class="btn btn-lg btn-primary" href="{{ route('animals.create') }}">Dodaj</a>
     </div>
 
     </div>
@@ -62,16 +62,16 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Picture</th>
-                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Person</th>
-                <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Animal</th>
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Chip</th>
-                <th width="8%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending" aria-sort="ascending">Date</th>
+                <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Slika</th>
+                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime osobe</th>
+                <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Ime životinje</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Čip</th>
+                <th width="8%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending" aria-sort="ascending">Datum</th>
                 <!-- <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="HiredDate: activate to sort column ascending">Hired Date</th> -->
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Age</th>
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Location</th>
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Address</th>
-                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Action</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Starost</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Lokacija</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Adresa</th>
+                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Opcije</th>
               </tr>
             </thead>
             <tbody>
@@ -91,13 +91,13 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <a href="{{ route('animals.edit', ['id' => $animal->id]) }}" class="btn btn-warning col-sm-4 col-xs-5 btn-margin">
-                        View/Update
+                        Pogledaj
                         </a>
 
                         <button type="submit"
-                         
+
                            class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
-                         Delete
+                         Ukloni
                        </button>
 
                     </form>
@@ -107,16 +107,16 @@
             </tbody>
             <tfoot>
               <tr>
-                <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Picture</th>
-                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Person</th>
-                <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Animal</th>
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Chip</th>
-                <th width="8%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending" aria-sort="ascending">Date</th>
+                <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Slika</th>
+                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime osobe</th>
+                <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Ime životinje</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Čip</th>
+                <th width="8%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending" aria-sort="ascending">Datum</th>
                 <!-- <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="HiredDate: activate to sort column ascending">Hired Date</th> -->
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Age</th>
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Location</th>
-                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Address</th>
-                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Action</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Starost</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Lokacija</th>
+                <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Adresa</th>
+                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Opcije</th>
               </tr>
               </tr>
             </tfoot>
@@ -125,7 +125,7 @@
       </div>
       <div class="row">
           <div class="col-sm-5">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Showing 1 to {{count($animals)}} of {{count($animals)}} entries</div>
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">Prikaz {{count($animals)}} od {{count($animals)}}  </div>
           </div>
           <div class="col-sm-7">
             <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">

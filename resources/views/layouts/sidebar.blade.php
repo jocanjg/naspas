@@ -12,7 +12,7 @@
       <div class="pull-left info">
         <p>{{ Auth::user()->name}}</p>
         <!-- Status -->
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+        <a href="#"><i class="fa fa-circle text-success"></i>Na mreži</a>
       </div><br><br>
     </div>
 
@@ -31,26 +31,25 @@
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
       <!-- Optionally, you can add icons to the links -->
-      <li class="treeview"><a href="{{ url('dashboard')}}"><i class="fa fa-link"></i> <span>Dashboard</span></a></li>
-      <li><a href="{{ url('animals')}}"><i class="fa fa-link"></i> <span>Animals Management</span></a></li>
+      <li class="treeview"><a href="{{ url('dashboard')}}"><i class="fa fa-link"></i> <span>Početna strana</span></a></li>
+      <li><a href="{{ url('animals')}}"><i class="fa fa-link"></i> <span>Psi i Mačke</span></a></li>
       <li class="treeview">
-        <a href="#"><i class="fa fa-link"></i> <span>System Management</span>
+        <a href="#"><i class="fa fa-link"></i> <span>Podešavanje sistema</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ url('box')}}">Box Number</a></li>
+          <li><a href="{{ url('box')}}">Kavezi</a></li>
           <li><a href="">Status</a></li>
-          <li><a href="{{ url('nacin')}}">Way of catching</a></li>
-          <li><a href="{{ url('reasons')}}">Reason for catching</a></li>
-          <li><a href="{{ url('locations')}}">Locations</a></li>
-          <li><a href="{{ url('sorts')}}">Sorts</a></li>
-          <li><a href="">Size</a></li>
-          <li><a href="{{ url('reports')}}">Report</a></li>
+          <li><a href="{{ url('nacin')}}">Način hvatanja</a></li>
+          <li><a href="{{ url('reasons')}}">Razlog hvatanja</a></li>
+          <li><a href="{{ url('locations')}}">Lokacija</a></li>
+          <li><a href="{{ url('sorts')}}">Vrste / Rase</a></li>
+          <li><a href="{{ url('reports')}}">Izveštaji</a></li>
         </ul>
       </li>
-      <li><a href="{{ route('users.index') }}"><i class="fa fa-link"></i> <span>User management</span></a></li>
+      <li><a href="{{ route('users.index') }}"><i class="fa fa-link"></i> <span>Korisnici</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>

@@ -35,7 +35,7 @@
               <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="img-circle" alt="User Image">
 
               <p>
-                Hello {{ Auth::user()->name }}
+                Dobrodošli {{ Auth::user()->name }}
               </p>
             </li>
 
@@ -43,15 +43,15 @@
             <li class="user-footer">
              @if (Auth::guest())
                 <div class="pull-left">
-                  <a href="{{ route('login') }}" class="btn btn-default btn-flat">Login</a>
+                  <a href="{{ route('login') }}" class="btn btn-default btn-flat">Prijava</a>
                 </div>
              @else
                <div class="pull-left">
-                  <a href="{{ url('profile') }}" class="btn btn-default btn-flat">Profile</a>
+                  <a href="{{ url('profile') }}" class="btn btn-default btn-flat">Profil</a>
                 </div>
                <div class="pull-right">
                   <a class="btn btn-default btn-flat" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                  Logout
+                  Odjava
                   </a>
                </div>
               @endif

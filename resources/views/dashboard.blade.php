@@ -67,7 +67,7 @@ desired effect
 
       <ol class="breadcrumb">
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
-        <li class="active">Dashboard</li>
+        <li class="active">Početna strana</li>
       </ol><br>
     </section>
 
@@ -82,12 +82,12 @@ desired effect
             <div class="inner">
               <h3>{{ $count }}</h3>
 
-              <p>Animals</p>
+              <p>Ukupan broj životinja</p>
             </div>
             <div class="icon">
               <i class="ion ion-heart"></i>
             </div>
-            <a href="{{ url('animals') }}" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ url('animals') }}" class="small-box-footer">Pogledaj listu <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -99,12 +99,12 @@ desired effect
             <div class="inner">
               <h3>{{ $cusers }}</h3>
 
-              <p>User Registrations</p>
+              <p>Ukupan broj ljudi</p>
             </div>
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Pogledaj listu <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -114,12 +114,12 @@ desired effect
             <div class="inner">
               <h3>{{ Counter::allHits() }}</h3>
 
-              <p>Unique Visitors</p>
+              <p>Broj pregleda</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
             </div>
-            <a href="#" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="#" class="small-box-footer">Više informacija <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -129,8 +129,8 @@ desired effect
           <div>
             <form method="POST" action="{{ route('animals.search') }}">
             {{ csrf_field() }}
-              @component('layouts.search', ['title' => 'Search'])
-               @component('layouts.two-cols-search-row', ['items' => ['Chip'],
+              @component('layouts.search', ['title' => 'Pretraga'])
+               @component('layouts.two-cols-search-row', ['items' => ['Broj čipa'],
                'oldVals' => [isset($searchingVals) ? $searchingVals['chip'] : '']])
                @endcomponent
              @endcomponent
@@ -145,7 +145,7 @@ desired effect
 
       <div class="box box-info">
           <div class="box-header with-border">
-            <h3 class="box-title">Latest</h3>
+            <h3 class="box-title">Poslednje</h3>
 
             <div class="box-tools pull-right">
               <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
@@ -159,11 +159,11 @@ desired effect
               <table class="table no-margin">
                 <thead>
                 <tr>
-                  <th>Chip</th>
-                  <th>Age</th>
-                  <th>Persons name</th>
-                  <th>Animals name</th>
-                  <th>Date</th>
+                  <th>Čip</th>
+                  <th>Starost</th>
+                  <th>Ime osobe</th>
+                  <th>Ime životinje</th>
+                  <th>Datum</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -190,8 +190,8 @@ desired effect
           </div>
           <!-- /.box-body -->
           <div class="box-footer clearfix">
-            <a href="{{ route('animals.create') }}" class="btn btn-sm btn-info btn-flat pull-left">Add Animal</a>
-            <a href="{{ url('animals') }}" class="btn btn-sm btn-default btn-flat pull-right">View All</a>
+            <a href="{{ route('animals.create') }}" class="btn btn-sm btn-info btn-flat pull-left">Dodaj</a>
+            <a href="{{ url('animals') }}" class="btn btn-sm btn-default btn-flat pull-right">Pogledaj sve</a>
           </div>
           <!-- /.box-footer -->
         </div>
@@ -200,10 +200,10 @@ desired effect
             <!-- USERS LIST -->
             <div class="box box-danger">
               <div class="box-header with-border">
-                <h3 class="box-title">Latest Members</h3>
+                <h3 class="box-title">Korisnici</h3>
 
                 <div class="box-tools pull-right">
-                  <span class="label label-danger">8 New Members</span>
+                  <span class="label label-danger">3 nova korisnika</span>
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                   </button>
                   <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
@@ -226,7 +226,7 @@ desired effect
               </div>
               <!-- /.box-body -->
               <div class="box-footer text-center">
-                <a href="javascript:void(0)" class="uppercase">View All Users</a>
+                <a href="javascript:void(0)" class="uppercase">Pogledaj sve korisnike</a>
               </div>
               <!-- /.box-footer -->
             </div>
@@ -239,8 +239,8 @@ desired effect
                 <span class="info-box-icon bg-gray"><i class="fa fa-th-large"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Space</span>
-                  <span class="info-box-number">90<small>%</small></span>
+                  <span class="info-box-text">Kapacitet</span>
+                  <span class="info-box-number">34<small>%</small></span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -252,8 +252,8 @@ desired effect
                 <span class="info-box-icon bg-red"><i class="fa fa-ambulance"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Urgent List</span>
-                  <span class="info-box-number">1,410</span>
+                  <span class="info-box-text">Urgentna lista</span>
+                  <span class="info-box-number">10</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -269,8 +269,8 @@ desired effect
                 <span class="info-box-icon bg-gray"><i class="fa fa-home"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Adopted</span>
-                  <span class="info-box-number">760</span>
+                  <span class="info-box-text">Udomljeno</span>
+                  <span class="info-box-number">23</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -282,8 +282,8 @@ desired effect
                 <span class="info-box-icon bg-gray"><i class="ion ion-ios-people-outline"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">New Members</span>
-                  <span class="info-box-number">2,000</span>
+                  <span class="info-box-text">Novi kontatki</span>
+                  <span class="info-box-number">1320</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
