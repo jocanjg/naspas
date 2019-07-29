@@ -9,14 +9,14 @@
           <h3 class="box-title">List of animals</h3>
         </div>
         <div class="col-sm-4">
-            <form class="form-horizontal" role="form" method="POST" action="">
+            <!-- <form class="form-horizontal" role="form" method="POST" action="">
                 {{ csrf_field() }}
                 <input type="hidden" value="" name="from" />
                 <input type="hidden" value="" name="to" />
                 <button type="submit" class="btn btn-primary">
                   Export to Excel
                 </button>
-            </form>
+            </form> -->
         </div>
         <div class="col-sm-4">
             <form class="form-horizontal" role="form" method="POST" action="{{ route('report.pdf') }}">

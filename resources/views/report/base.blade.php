@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Report
+        Izveštaji
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> System Mangement</a></li>
-        <li class="active">Report</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i>Podešavanje sistema</a></li>
+        <li class="active">Izveštaji</li>
       </ol>
     </section>
     @yield('action-content')

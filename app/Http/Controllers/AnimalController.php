@@ -204,9 +204,9 @@ public function __construct()
       $constraints = [
           'chip' => $request['chip']
           ];
-
+          $users = Auth::id();
      $animals = $this->doSearchingQuery($constraints);
-     return view('animals/index', ['animals' => $animals, 'searchingVals' => $constraints]);
+     return view('animals/index', ['animals' => $animals, 'searchingVals' => $constraints, 'users' =>$users]);
   }
 
   private function doSearchingQuery($constraints) {
