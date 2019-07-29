@@ -130,7 +130,7 @@ desired effect
             <form method="POST" action="{{ route('animals.search') }}">
             {{ csrf_field() }}
               @component('layouts.search', ['title' => 'Pretraga'])
-               @component('layouts.two-cols-search-row', ['items' => ['Broj čipa'],
+               @component('layouts.two-cols-search-row', ['items' => ['chip'],
                'oldVals' => [isset($searchingVals) ? $searchingVals['chip'] : '']])
                @endcomponent
              @endcomponent
