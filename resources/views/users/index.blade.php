@@ -54,10 +54,10 @@
 
 
                          <button type="submit"
-                          <?php if( 0 !== $user->user_id)
-                            { echo "style='display:none;'";} ?>
-                            class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
-                          Delete
+                         <?php if( 1 !== $admin)
+                           { echo "style='display:none;'";} ?>
+                           class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
+                          Ukloni
                         </button>
 
                     </form>

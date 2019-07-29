@@ -95,8 +95,9 @@
                         </a>
 
                         <button type="submit"
-
-                           class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
+                        <?php if( 1 !== $users)
+                          { echo "style='display:none;'";} ?>
+                          class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
                          Ukloni
                        </button>
 

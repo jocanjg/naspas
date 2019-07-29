@@ -12,6 +12,7 @@ use App\User;
 use App\Box;
 use App\Sort;
 use Session;
+use Auth;
 
 
 
@@ -37,7 +38,7 @@ public function __construct()
     public function index()
     {
       $count = DB::table('animals')->count();
-      $users = User::all();
+      $users = Auth::id();
 
 
 
