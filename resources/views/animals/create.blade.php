@@ -10,15 +10,15 @@
     <div class="row">
         <div class="col-md-10 col-md-offset-2" style="margin-left: 0;">
             <div class="panel panel-default">
-                <div class="panel-heading">Add new pet</div>
+                <div class="panel-heading">Dodaj životinju</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ route('animals.store') }}" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <div class="form-group{{ $errors->has('pname') ? ' has-error' : '' }} col-md-5">
-                            <label for="pname" class="col-md-4 control-label">Persons Name</label>
+                            <label for="pname" class="col-md-4 control-label">Ime Korisnika</label>
 
                             <div class="col-md-8">
-                                <input id="pname" type="text" class="form-control" name="pname" value="{{ old('pname') }}" required autofocus>
+                                <input id="pname" type="text" class="form-control" name="pname" value="{{ Auth::user()->name }}" required autofocus>
 
                                 @if ($errors->has('pname'))
                                     <span class="help-block">
@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('dname') ? ' has-error' : '' }} col-md-5">
-                            <label for="dname" class="col-md-4 control-label">Dogs Name</label>
+                            <label for="dname" class="col-md-4 control-label">Ime životinje</label>
 
                             <div class="col-md-8">
                                 <input id="dname" type="text" class="form-control" name="dname" value="{{ old('dname') }}" required>
@@ -43,17 +43,17 @@
                         </div>
 
                         <div class="form-group col-md-5">
-                            <label for="avatar" class="col-md-4 control-label" >Picture</label>
+                            <label for="avatar" class="col-md-4 control-label" >Slika</label>
                             <div class="col-md-6">
                                 <input type="file" id="picture" name="picture" required >
                             </div>
                         </div>
 
                         <div class="form-group col-md-5">
-                            <label class="col-md-4 control-label">Location</label>
+                            <label class="col-md-4 control-label">Lokacija</label>
                             <div class="col-md-8">
                                 <select class="form-control" name="location_id" required>
-                                    <option value="-1">Please select</option>
+                                    <option value="-1">Izaberi</option>
                                   @foreach ($locations as $location)
                                         <option value="{{$location->id}}">{{$location->location}}</option>
                                     @endforeach
@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="form-group col-md-5">
-                            <label class="col-md-4 control-label">Date</label>
+                            <label class="col-md-4 control-label">Datum</label>
                             <div class="col-md-8">
                                 <div class="input-group date">
                                     <div class="input-group-addon">
@@ -75,7 +75,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }} col-md-5">
-                            <label for="address" class="col-md-4 control-label">Address</label>
+                            <label for="address" class="col-md-4 control-label">Adresa</label>
 
                             <div class="col-md-8">
                                 <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
@@ -90,10 +90,10 @@
 
 
                         <div class="form-group col-md-5">
-                            <label class="col-md-4 control-label">Reason for catching</label>
+                            <label class="col-md-4 control-label">Razlog hvatanja</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="reason_id">
-                                    <option value="-1">Please select</option>
+                                    <option value="-1">Izaberi</option>
                                    @foreach ($reasons as $reason)
                                         <option value="{{$reason->id}}">{{$reason->name}}</option>
                                     @endforeach
@@ -103,7 +103,7 @@
 
 
                         <div class="form-group{{ $errors->has('chip') ? ' has-error' : '' }} col-md-5">
-                            <label for="chip" class="col-md-4 control-label">Chip number</label>
+                            <label for="chip" class="col-md-4 control-label">Broj Čipa</label>
 
                             <div class="col-md-6">
                                 <input id="chip" type="text" class="form-control" name="chip" value="{{ old('chip') }}" required>
@@ -119,7 +119,7 @@
 
 
                         <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }} col-md-5">
-                            <label for="age" class="col-md-4 control-label">Age</label>
+                            <label for="age" class="col-md-4 control-label">Starost životinje</label>
 
                             <div class="col-md-6">
                                 <input id="age" type="text" class="form-control" name="age" value="{{ old('age') }}" required>
@@ -135,10 +135,10 @@
 
 
                         <div class="form-group{{ $errors->has('nacin_id') ? ' has-error' : '' }} col-md-5">
-                            <label class="col-md-4 control-label">Way of catching</label>
+                            <label class="col-md-4 control-label">Način hvatanja</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="nacin_id">
-                                  <option value="-1">Please select</option>
+                                  <option value="-1">Izaberi</option>
                                     @foreach ($nacins as $nacin)
                                         <option value="{{$nacin->id}}">{{$nacin->name}}</option>
                                     @endforeach
@@ -154,7 +154,7 @@
 
 
                         <div class="form-group{{ $errors->has('department_id') ? ' has-error' : '' }} col-md-5">
-                            <label class="col-md-4 control-label">Box</label>
+                            <label class="col-md-4 control-label">Kavez</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="box">
                                     @foreach ($boxes as $box)
@@ -167,13 +167,13 @@
 
 
                         <div class="form-group{{ $errors->has('size_id') ? ' has-error' : '' }} col-md-5">
-                            <label class="col-md-4 control-label">Size</label>
+                            <label class="col-md-4 control-label">Veličina</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="size">
 
-                                        <option value="1">Small</option>
-                                        <option value="2">Medium</option>
-                                        <option value="2">Large</option>
+                                        <option value="1">Mali</option>
+                                        <option value="2">Srednji</option>
+                                        <option value="2">Veliki</option>
 
                                 </select>
                             </div>
@@ -181,17 +181,17 @@
 
 
                         <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }} col-md-5">
-                            <label class="col-md-4 control-label">Gender</label>
+                            <label class="col-md-4 control-label">Pol</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="gender">
-                                      <option value="1">Male</option>
-                                      <option value="2">Female</option>
+                                      <option value="1">Mužijak</option>
+                                      <option value="2">Ženka</option>
                                 </select>
                             </div>
                         </div>
 
                           <div class="form-group{{ $errors->has('sort') ? ' has-error' : '' }} col-md-5">
-                              <label class="col-md-4 control-label">Race</label>
+                              <label class="col-md-4 control-label">Rasa</label>
                               <div class="col-md-6">
                                   <select class="form-control" name="sort">
                                       @foreach ($sorts as $sort)
@@ -205,14 +205,14 @@
                                   @endif
                                 </div><br><br><br>
                                 <div>
-                                  <textarea class="textarea" placeholder="Message" name="text" style="width: 100%; height: 105px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+                                  <textarea class="textarea" placeholder="Opis životinje" name="text" style="width: 100%; height: 105px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 </div>
                           </div>
 
                         <div class="form-group col-md-6">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Create
+                                    Unesi
                                 </button>
                             </div>
                         </div>
