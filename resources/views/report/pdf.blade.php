@@ -30,7 +30,7 @@
               <tr role="row">
                 <th width="20%">Ime Korsinika</th>
                 <th width="20%">Ime Životinje</th>
-                <th width="20%">Čip</th>
+                <th width="20%">Chip</th>
                 <th width="10%">Starost</th>
 
               </tr>
