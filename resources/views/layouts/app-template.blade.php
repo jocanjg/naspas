@@ -33,6 +33,16 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <!-- mobile specific metas
+    ================================================== -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#605ca8">
+        <!-- Windows Phone -->
+        <meta name="msapplication-navbutton-color" content="#605ca8">
+        <!-- iOS Safari -->
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="#605ca8">
+
     <style media="screen">
       #hideMe {
         -webkit-animation: cssAnimation 2s forwards;

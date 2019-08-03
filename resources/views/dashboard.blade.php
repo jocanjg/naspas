@@ -31,6 +31,16 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
+  <!-- mobile specific metas
+  ================================================== -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="theme-color" content="#605ca8">
+      <!-- Windows Phone -->
+      <meta name="msapplication-navbutton-color" content="#605ca8">
+      <!-- iOS Safari -->
+      <meta name="apple-mobile-web-app-capable" content="yes">
+      <meta name="apple-mobile-web-app-status-bar-style" content="#605ca8">
+
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -104,7 +114,7 @@ desired effect
             <div class="icon">
               <i class="ion ion-person-add"></i>
             </div>
-            <a href="#" class="small-box-footer">Pogledaj listu <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="{{ route('users.index') }}" class="small-box-footer">Pogledaj listu <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
         <!-- ./col -->
@@ -198,12 +208,12 @@ desired effect
         <!-- /.box -->
         <div class="col-md-6">
             <!-- USERS LIST -->
-            <div class="box box-danger">
+            <div class="box box-success">
               <div class="box-header with-border">
                 <h3 class="box-title">Korisnici</h3>
 
                 <div class="box-tools pull-right">
-                  <span class="label label-danger">3 nova korisnika</span>
+                  <span class="label label-danger">2 korisnika</span>
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                   </button>
                   <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>

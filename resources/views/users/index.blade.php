@@ -6,10 +6,10 @@
   <div class="box-header">
     <div class="row">
         <div class="col-sm-8">
-          <h3 class="box-title">List of users</h3>
+          <h3 class="box-title">Lista korisnika</h3>
         </div>
         <div class="col-sm-4">
-          <a class="btn btn-primary" href="{{ route('users.create')}}">Add new user</a>
+          <a class="btn btn-primary" href="{{ route('users.create')}}">Dodaj</a>
         </div>
     </div>
   </div>
@@ -30,11 +30,11 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">User Name</th>
+                <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Ima Korisnika</th>
                 <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
                 <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">First Name</th>
                 <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Last Name</th>
-                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Action</th>
+                <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Opcije</th>
               </tr>
             </thead>
             <tbody>
@@ -49,7 +49,7 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <a href="" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
-                        Update
+                        Pogledaj
                         </a>
 
 
@@ -67,11 +67,11 @@
             </tbody>
             <tfoot>
               <tr>
-                <th width="10%" rowspan="1" colspan="1">User Name</th>
+                <th width="10%" rowspan="1" colspan="1">Ime Korisnika</th>
                 <th width="20%" rowspan="1" colspan="1">Email</th>
                 <th class="hidden-xs" width="20%" rowspan="1" colspan="1">First Name</th>
                 <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Last Name</th>
-                <th rowspan="1" colspan="2">Action</th>
+                <th rowspan="1" colspan="2">Opcije</th>
               </tr>
             </tfoot>
           </table>
