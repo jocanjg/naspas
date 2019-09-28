@@ -45,7 +45,7 @@
                   <td class="hidden-xs"></td>
                   <td class="hidden-xs"></td>
                   <td>
-                    <form class="row" method="POST" action="" onsubmit = "return confirm('Are you sure?')">
+                    <form class="row" method="POST" action="{{ route('users.destroy', ['id' => $user->id]) }}" onsubmit = "return confirm('Are you sure?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <a href="" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">

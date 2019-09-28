@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\User;
 use Auth;
+use Session;
 
 class UserController extends Controller
 {
@@ -93,6 +94,10 @@ class UserController extends Controller
      */
     public function destroy($id)
     {
-        //
+      $users = User::find($id);
+      $users->delete();
+
+      Session::flash('success','User was deleted!');
+      return redirect()->back();
     }
 }
