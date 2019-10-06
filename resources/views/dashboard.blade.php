@@ -213,7 +213,7 @@ desired effect
                 <h3 class="box-title">Korisnici</h3>
 
                 <div class="box-tools pull-right">
-                  <span class="label label-danger">2 korisnika</span>
+                  <span class="label label-danger">{{ $cusers }} korisnika</span>
                   <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                   </button>
                   <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i>
