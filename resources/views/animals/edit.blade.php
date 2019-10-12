@@ -176,7 +176,7 @@
                       <div class="form-group col-md-5">
                           <label for="avatar" class="col-md-4 control-label" >Slika</label>
                           <div class="col-md-6" >
-                            <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid"/>
+                            <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" width="100px" height="130px"/>
                           <input type="file" id="picture" name="picture" />
                           </div>
                       </div>
