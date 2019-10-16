@@ -21,7 +21,7 @@ class CreateAnimalsTable extends Migration
         $table->integer('location_id');
         $table->integer('nacin_id');
         $table->integer('reason_id');
-        $table->char('chip', 10);
+        $table->char('chip', 30)->unique();
         $table->integer('age');
         $table->date('date');
         $table->text('text');
