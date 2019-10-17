@@ -250,7 +250,7 @@ desired effect
 
                 <div class="info-box-content">
                   <span class="info-box-text">Kapacitet</span>
-                  <span class="info-box-number">34<small>%</small></span>
+                  <span class="info-box-number">{{ $rez }}<small>%</small></span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -263,7 +263,7 @@ desired effect
 
                 <div class="info-box-content">
                   <span class="info-box-text">Urgentna lista</span>
-                  <span class="info-box-number">10</span>
+                  <span class="info-box-number">0</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -280,7 +280,7 @@ desired effect
 
                 <div class="info-box-content">
                   <span class="info-box-text">Udomljeno</span>
-                  <span class="info-box-number">23</span>
+                  <span class="info-box-number">0</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
@@ -293,7 +293,7 @@ desired effect
 
                 <div class="info-box-content">
                   <span class="info-box-text">Novi kontatki</span>
-                  <span class="info-box-number">1320</span>
+                  <span class="info-box-number">0</span>
                 </div>
                 <!-- /.info-box-content -->
               </div>
