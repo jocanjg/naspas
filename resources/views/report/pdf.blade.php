@@ -24,14 +24,14 @@
   </head>
   <body>
     <div class="container">
-        <div><h2>List of catched animals from {{$searchingVals['from']}} to {{$searchingVals['to']}}</h2></div>
+        <div><h1>NASPAS</h1><h2>Lista uhvaćenih životinja od {{$searchingVals['from']}} do {{$searchingVals['to']}}</h2></div>
        <table id="example2" role="grid">
             <thead>
               <tr role="row">
-                <th width="20%">Ime Korsinika</th>
-                <th width="20%">Ime Životinje</th>
-                <th width="20%">Chip</th>
+                <th width="15%">Ime Korsinika</th>
+                <th width="20%">Čip</th>
                 <th width="10%">Starost</th>
+                <th width="15%">Lokacija</th>
 
               </tr>
             </thead>
@@ -39,9 +39,10 @@
             @foreach ($animals as $animal)
                 <tr role="row" class="odd">
                   <td>{{ $animal['pname'] }} </td>
-                  <td>{{ $animal['dname'] }}</td>
                   <td>{{ $animal['chip'] }}</td>
                   <td>{{ $animal['age'] }}</td>
+                  <td>{{ $animal['address'] }}</td>
+
 
               </tr>
             @endforeach
