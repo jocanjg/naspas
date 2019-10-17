@@ -71,7 +71,7 @@
                                     <div class="input-group-addon">
                                         <i class="fa fa-calendar"></i>
                                     </div>
-                                    <input type="text" value="{{ $animal->datein}}" name="datein" class="form-control pull-right" id="datein" required>
+                                    <input type="text" value="{{ $animal->datein}}" name="datein" value="{{ $animal->datein}}" class="form-control pull-right" id="datein" required>
                                 </div>
                             </div>
                         </div>
