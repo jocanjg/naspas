@@ -24,7 +24,7 @@
   </head>
   <body>
     <div class="container">
-        <div><h1>NASPAS</h1><h2>Lista uhvaćenih životinja od {{$searchingVals['from']}} do {{$searchingVals['to']}}</h2></div>
+        <div><h1>NASPAS</h1><h2>Lista unetih životinja od {{$searchingVals['from']}} do {{$searchingVals['to']}}</h2></div>
        <table id="example2" role="grid">
             <thead>
               <tr role="row">
