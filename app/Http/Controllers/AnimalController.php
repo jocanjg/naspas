@@ -186,7 +186,7 @@ public function __construct()
           'dname' => 'required|max:60',
           'address' => 'required|max:120',
           'location_id' => 'required',
-          'chip' => 'required|max:25',
+          'chip' => 'required|max:40',
           'age' => 'required',
           'date' => 'required',
           'text' => 'required'
