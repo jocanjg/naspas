@@ -153,7 +153,7 @@ public function __construct()
       $animals = Animal::findOrFail($id);
       $this->validateInput($request);
       // Upload image
-      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text','sort','size', 'box', 'gender', 'hirurg', 'tezina'];
+      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text','sort','size', 'box', 'gender', 'hirurg', 'tezina', 'datein'];
       $input = $this->createQueryInput($keys, $request);
         if ($request->file('picture')) {
           $path = $request->file('picture')->store('avatars');
