@@ -233,7 +233,7 @@
         </button>
       </div>
       <div class="modal-body" class="width:20%;">
-          <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:550px;"/>
+          <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:650px;"/>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
