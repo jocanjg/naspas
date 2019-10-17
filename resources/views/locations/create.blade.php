@@ -16,7 +16,7 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('location') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Naziv grada</label>
+                            <label for="name" class="col-md-4 control-label">Naziv</label>
 
                             <div class="col-md-6">
                                 <input id="location" type="text" class="form-control" name="location" value="{{ old('location') }}" required autofocus>
@@ -31,7 +31,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Create
+                                    Unesi
                                 </button>
                             </div>
                         </div>

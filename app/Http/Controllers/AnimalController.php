@@ -100,7 +100,7 @@ public function __construct()
         $this->validateInput($request);
         // Upload image
         $path = $request->file('picture')->store('avatars');
-        $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text', 'sort','size','box','gender'];
+        $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text', 'sort','size','box','gender','hirurg','tezina','datein'];
         $input = $this->createQueryInput($keys, $request);
         $input['picture'] = $path;
         // Not implement yet
@@ -137,6 +137,7 @@ public function __construct()
       $locations = Location::all();
       $reasons = Reason::all();
 
+
       return view('animals/edit', ['animal' => $animal,'locations' => $locations, 'reasons'=>$reasons, 'nacins' => $nacins, 'sorts' => $sorts, 'boxes' => $boxes]);
     }
 
@@ -152,7 +153,7 @@ public function __construct()
       $animals = Animal::findOrFail($id);
       $this->validateInput($request);
       // Upload image
-      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text','sort','size', 'box', 'gender'];
+      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text','sort','size', 'box', 'gender', 'hirurg', 'tezina'];
       $input = $this->createQueryInput($keys, $request);
         if ($request->file('picture')) {
           $path = $request->file('picture')->store('avatars');

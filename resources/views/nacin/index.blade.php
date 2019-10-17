@@ -7,7 +7,7 @@
     <div class="row">
         <div class="col-sm-8">
           <h3 class="box-title">Lista</h3>
-          <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium</p>
+          <p>Postojeći načini hvatanja životinja i kreiranje novih</p>
         </div>
         <div class="col-sm-4">
           <a class="btn btn-primary" href="{{ route('nacin.create') }}">Dodaj novi</a>
@@ -44,10 +44,10 @@
                           <input type="hidden" name="_method" value="DELETE">
                           <input type="hidden" name="_token" value="{{ csrf_token() }}">
                           <a href="" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
-                          Update
+                          Pogledaj
                           </a>
                           <button type="submit" class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
-                            Delete
+                            Ukloni
                           </button>
                       </form>
                     </td>
@@ -66,11 +66,11 @@
         </div>
         <div class="row">
           <div class="col-sm-5">
-            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">verve</div>
+            <div class="dataTables_info" id="example2_info" role="status" aria-live="polite"></div>
           </div>
           <div class="col-sm-7">
             <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-            aervaerv
+            naspas
             </div>
           </div>
         </div>

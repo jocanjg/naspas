@@ -62,7 +62,7 @@
                         </div>
 
                         <div class="form-group col-md-5">
-                            <label class="col-md-4 control-label">Datum</label>
+                            <label class="col-md-4 control-label">Datum unosa</label>
                             <div class="col-md-8">
                                 <div class="input-group date">
                                     <div class="input-group-addon">
@@ -70,6 +70,18 @@
                                     </div>
                                     <input type="text" value="<?php  $mytime = Carbon\Carbon::now();
                                      echo $mytime->toDateTimeString(); ?>" name="date" class="form-control pull-right" id="date" required>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label class="col-md-4 control-label">Datum dolaska</label>
+                            <div class="col-md-8">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" value="" name="datein" class="form-control pull-right" id="datein" required>
                                 </div>
                             </div>
                         </div>
@@ -91,7 +103,7 @@
 
                         <div class="form-group col-md-5">
                             <label class="col-md-4 control-label">Razlog hvatanja</label>
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <select class="form-control" name="reason_id">
                                     <option value="-1">Izaberi</option>
                                    @foreach ($reasons as $reason)
@@ -105,7 +117,7 @@
                         <div class="form-group{{ $errors->has('chip') ? ' has-error' : '' }} col-md-5">
                             <label for="chip" class="col-md-4 control-label">Broj Čipa</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="chip" type="text" class="form-control" name="chip" value="{{ old('chip') }}" required>
 
                                 @if ($errors->has('chip'))
@@ -121,7 +133,7 @@
                         <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }} col-md-5">
                             <label for="age" class="col-md-4 control-label">Starost životinje</label>
 
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <input id="age" type="text" class="form-control" name="age" value="{{ old('age') }}" required>
 
                                 @if ($errors->has('age'))
@@ -136,7 +148,7 @@
 
                         <div class="form-group{{ $errors->has('nacin_id') ? ' has-error' : '' }} col-md-5">
                             <label class="col-md-4 control-label">Način hvatanja</label>
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <select class="form-control" name="nacin_id">
                                   <option value="-1">Izaberi</option>
                                     @foreach ($nacins as $nacin)
@@ -151,11 +163,38 @@
                             </div>
                         </div>
 
+                        <div class="form-group col-md-5">
+                            <label for="hirurg" class="col-md-4 control-label">Hirurška intervencija</label>
+
+                            <div class="col-md-8">
+                                <input id="hirurg" type="text" class="form-control" name="hirurg" value="{{ old('hirurg') }}" required>
+
+                                @if ($errors->has('hirurg'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('hirurg') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="tezina" class="col-md-4 control-label">Težina</label>
+
+                            <div class="col-md-8">
+                                <input id="tezina" type="text" class="form-control" name="tezina" value="{{ old('tezina') }}" required>
+
+                                @if ($errors->has('tezina'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tezina') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
 
 
-                        <div class="form-group{{ $errors->has('department_id') ? ' has-error' : '' }} col-md-5">
+                        <div class="form-group{{ $errors->has('box_id') ? ' has-error' : '' }} col-md-5">
                             <label class="col-md-4 control-label">Kavez</label>
-                            <div class="col-md-6">
+                            <div class="col-md-8">
                                 <select class="form-control" name="box">
                                     @foreach ($boxes as $box)
                                         <option value="{{$box->id}}">{{$box->name}}</option>
@@ -164,6 +203,7 @@
 
                             </div>
                         </div>
+
 
 
                         <div class="form-group{{ $errors->has('size_id') ? ' has-error' : '' }} col-md-5">
@@ -180,6 +220,7 @@
                         </div>
 
 
+
                         <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }} col-md-5">
                             <label class="col-md-4 control-label">Pol</label>
                             <div class="col-md-6">
@@ -189,6 +230,8 @@
                                 </select>
                             </div>
                         </div>
+
+
 
                           <div class="form-group{{ $errors->has('sort') ? ' has-error' : '' }} col-md-5">
                               <label class="col-md-4 control-label">Rasa</label>
@@ -203,15 +246,21 @@
                                           <strong>{{ $errors->first('name') }}</strong>
                                       </span>
                                   @endif
-                                </div><br><br><br>
-                                <div>
-                                  <textarea class="textarea" placeholder="Opis životinje" name="text" style="width: 100%; height: 105px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
                                 </div>
+
+                          </div>
+
+                          <div class="form-group col-md-5">
+                              <label for="text" class="col-md-4 control-label">Detalji</label>
+
+                              <div class="col-md-8">
+                                  <textarea class="textarea" placeholder="Opis životinje" name="text" style="width: 100%; height: 105px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;" value="{{ old('text') }}"></textarea>
+                              </div>
                           </div>
 
                         <div class="form-group col-md-6">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
+                                <button type="submit" class="btn btn-primary btn-lg">
                                     Unesi
                                 </button>
                             </div>

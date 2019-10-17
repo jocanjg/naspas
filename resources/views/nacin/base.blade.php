@@ -7,8 +7,8 @@
         Nacin hvatanja
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
-        <li class="active">Nacin hvatanja</li>
+        <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
+        <li class="active"><a href="{{ route('nacin.index') }}">Nacin hvatanja</a></li>
       </ol>
     </section>
     @yield('action-content')

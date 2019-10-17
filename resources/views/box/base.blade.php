@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Broj kaveza
+        Kavezi
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
-        <li class="active">Broj kaveza</li>
+        <li><a href="{{ url('/')  }}"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
+        <li><a href="{{ route('box.index') }}">Kavezi</a></li>
       </ol>
     </section>
     @yield('action-content')

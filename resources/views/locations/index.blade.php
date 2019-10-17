@@ -11,8 +11,8 @@
   <div class="box-header">
     <div class="row">
         <div class="col-sm-8">
-          <h3 class="box-title">Uputstvo</h3>
-          <p>Ripsum dolor sit amet, consectetur adipiscing elit. Curabitur porttitor convallis arcu vel eleifend. </p>
+          <h3 class="box-title">Lista</h3>
+          <p>Pregled i unos novih gradova, opština i sela</p>
         </div>
         <div class="col-sm-4">
           <a class="btn btn-primary" href="{{ route('locations.create')}}">Dodaj novi</a>
@@ -34,7 +34,7 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="70%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Grad</th>
+                <th width="70%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Lokacija</th>
                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Podesavanje</th>
               </tr>
             </thead>
@@ -48,10 +48,10 @@
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <a href="{{ route('locations.edit', ['id' => $location->id]) }}" class="btn btn-warning col-sm-3 col-xs-5 btn-margin">
-                        Update
+                        Pogledaj
                         </a>
                         <button type="submit" class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
-                        Delete
+                        Ukloni
                         </button>
                     </form>
                   </td>
@@ -61,7 +61,7 @@
             @endif
             <tfoot>
               <tr>
-                <th width="20%" rowspan="1" colspan="1">Grad</th>
+                <th width="20%" rowspan="1" colspan="1">Lokacija</th>
                 <th rowspan="1" colspan="2">Podesavanje</th>
               </tr>
             </tfoot>
@@ -70,11 +70,11 @@
       </div>
       <div class="row">
         <div class="col-sm-5">
-          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite">verve</div>
+          <div class="dataTables_info" id="example2_info" role="status" aria-live="polite"></div>
         </div>
         <div class="col-sm-7">
           <div class="dataTables_paginate paging_simple_numbers" id="example2_paginate">
-          aervaerv
+          naspas
           </div>
         </div>
       </div>

@@ -7,8 +7,8 @@
         Razlog
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
-        <li class="active">Razlog</li>
+        <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
+        <li class="active"><a href="{{ route('reasons.index') }}">Razlog</a></li>
       </ol>
     </section>
     @yield('action-content')

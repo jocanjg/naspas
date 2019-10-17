@@ -4,11 +4,11 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Gradovi
+        Lokacija
       </h1>
       <ol class="breadcrumb">
-        <li><a href="/dashboard"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
-        <li class="active">Gradovi</li>
+        <li><a href="{{ url('/') }}"><i class="fa fa-dashboard"></i> Sistem Podesavanje</a></li>
+        <li class="active"><a href="{{ route('locations.index') }}">Lokacija</a></li>
       </ol>
     </section>
     @yield('action-content')

@@ -64,6 +64,19 @@
                             </div>
                         </div>
 
+                        <div class="form-group col-md-5">
+                            <label class="col-md-4 control-label">Datum dolaska</label>
+                            <div class="col-md-8">
+                                <div class="input-group date">
+                                    <div class="input-group-addon">
+                                        <i class="fa fa-calendar"></i>
+                                    </div>
+                                    <input type="text" value="{{ $animal->datein}}" name="datein" class="form-control pull-right" id="datein" required>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }} col-md-5">
                             <label for="address" class="col-md-4 control-label">Adresa</label>
 
@@ -142,6 +155,34 @@
                         </div>
 
 
+                        <div class="form-group col-md-5">
+                            <label for="hirurg" class="col-md-4 control-label">Hirurška intervencija</label>
+
+                            <div class="col-md-8">
+                                <input id="hirurg" type="text" class="form-control" name="hirurg" value="{{ $animal->hirurg }}" required>
+
+                                @if ($errors->has('hirurg'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('hirurg') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group col-md-5">
+                            <label for="tezina" class="col-md-4 control-label">Težina</label>
+
+                            <div class="col-md-8">
+                                <input id="tezina" type="text" class="form-control" name="tezina" value="{{ $animal->tezina }}" required>
+
+                                @if ($errors->has('tezina'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('tezina') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
 
                         <div class="form-group{{ $errors->has('department_id') ? ' has-error' : '' }} col-md-5">
                             <label class="col-md-4 control-label">Kavez</label>
@@ -207,13 +248,13 @@
                           </div>
                       </div>
 
-                      <div class="form-group col-md-5">
+                      <!-- <div class="form-group col-md-5">
                           <label class="col-md-4 control-label">Veterinar</label>
                           <div class="col-md-6">
                           <span class="text">Označi kao HITNO! (Potreban pregled) </span>
                           <input type="checkbox" value="">
                           </div>
-                      </div>
+                      </div> -->
 
 
                         <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }} col-md-5">

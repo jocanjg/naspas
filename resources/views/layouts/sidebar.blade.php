@@ -31,25 +31,25 @@
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
       <!-- Optionally, you can add icons to the links -->
-      <li class="treeview"><a href="{{ url('dashboard')}}"><i class="fa fa-link"></i> <span>Početna strana</span></a></li>
-      <li><a href="{{ url('animals')}}"><i class="fa fa-link"></i> <span>Psi i Mačke</span></a></li>
+      <li class="treeview"><a href="{{ url('dashboard')}}"><i class="fa fa-server "></i> <span>Početna strana</span></a></li>
+      <li><a href="{{ url('animals')}}"><i class="fa fa-paw "></i> <span>Psi i Mačke</span></a></li>
       <li class="treeview">
-        <a href="#"><i class="fa fa-link"></i> <span>Podešavanje sistema</span>
+        <a href="#"><i class="fa fa-cog"></i> <span>Podešavanje sistema</span>
           <span class="pull-right-container">
             <i class="fa fa-angle-left pull-right"></i>
           </span>
         </a>
         <ul class="treeview-menu">
-          <li><a href="{{ url('box')}}">Kavezi</a></li>
-          <li><a href="">Status</a></li>
-          <li><a href="{{ url('nacin')}}">Način hvatanja</a></li>
-          <li><a href="{{ url('reasons')}}">Razlog hvatanja</a></li>
-          <li><a href="{{ url('locations')}}">Lokacija</a></li>
-          <li><a href="{{ url('sorts')}}">Vrste / Rase</a></li>
-          <li><a href="{{ url('reports')}}">Izveštaji</a></li>
+          <li><a href="{{ url('box')}}"><i class="fa fa-th"></i>Kavezi</a></li>
+          <!-- <li><a href="">Status</a></li> -->
+          <li><a href="{{ url('nacin')}}"><i class="fa fa-hand-lizard-o"></i>Način hvatanja</a></li>
+          <li><a href="{{ url('reasons')}}"><i class="fa fa-question"></i>Razlog hvatanja</a></li>
+          <li><a href="{{ url('locations')}}"><i class="fa fa-location-arrow"></i>Lokacija</a></li>
+          <li><a href="{{ url('sorts')}}"><i class="fa fa-paw"></i>Vrste / Rase</a></li>
+          <li><a href="{{ url('reports')}}"><i class="fa fa-file"></i>Izveštaji</a></li>
         </ul>
       </li>
-      <li><a href="{{ route('users.index') }}"><i class="fa fa-link"></i> <span>Korisnici</span></a></li>
+      <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Korisnici</span></a></li>
     </ul>
     <!-- /.sidebar-menu -->
   </section>
