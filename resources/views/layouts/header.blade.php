@@ -7,7 +7,7 @@
     <span class="logo-mini"><img class="center-block" src="https://png.pngtree.com/templates_detail/20180926/pet-shop-dogs-animal-health-care-png_34189.jpg" width="45" height="45" alt="Google" id="logo" style="z-index: 4; position: relative;"><b>M</b>P</span>
 
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg">{{ config('app.name', 'MPS') }}</span>
+    <span class="logo-lg">{{ config('app.name', 'NASPAS') }}</span>
   </a>
 
   <!-- Header Navbar -->
