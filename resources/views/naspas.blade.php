@@ -62,7 +62,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-purple hold-transition sidebar-collapse sidebar-mini">
+<body class="skin-purple hold-transition sidebar-collapse">
 <div class="wrapper">
 
   <!-- Main Header -->
