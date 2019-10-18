@@ -145,9 +145,9 @@ desired effect
         </div>
       </div>
       <!-- /.widget-user -->
-    </div>
+    </div></div>
 @endforeach
-  </div>
+  
   <!-- /.content-wrapper -->
 
   <!-- Footer -->
