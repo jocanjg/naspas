@@ -10,7 +10,8 @@ class NaspasController extends Controller
       public function index(){
         $animals = DB::table('animals')
         ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
-        ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'animals.age as age','animals.gender as gender','animals.tezina as tezina');
+        ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'animals.age as age','animals.gender as gender','animals.tezina as tezina')
+        ->paginate(5);
         return view('naspas',['animals'=>$animals]);
 
       }
