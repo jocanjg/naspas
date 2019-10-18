@@ -79,13 +79,37 @@ desired effect
 
       <div class="box box-widget widget-user">
         <!-- Add the bg color to the header using any of the bg-* classes -->
-        <div class="widget-user-header bg-aqua-active">
+
+        <div class="widget-user-header bg-aqua-active" data-toggle="modal" data-target="#exampleModal" >
           <h3 class="widget-user-username">{{ $animal->dname }}</h3>
           <h5 class="widget-user-desc">{{ $animal->pname }}</h5>
         </div>
-        <div class="widget-user-image">
+        <!-- <div class="widget-user-image">
           <img src="{{ asset('storage/'.$animal->picture) }}" width="50px" height="150px"/></td>
+        </div> -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Slika</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body" class="width:20%;">
+                  <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+                <button type="button" class="btn btn-primary">Dodaj</button>
+              </div>
+            </div>
+          </div>
         </div>
+
         <div class="box-footer">
           <div class="row">
             <div class="col-sm-4 border-right">
