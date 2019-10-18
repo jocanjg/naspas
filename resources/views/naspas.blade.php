@@ -80,17 +80,17 @@ desired effect
       <div class="box box-widget widget-user">
         <!-- Add the bg color to the header using any of the bg-* classes -->
 
-        <div class="widget-user-header bg-aqua-active" data-toggle="modal" data-target="#exampleModal" >
+        <div class="widget-user-header bg-aqua-active">
           <h3 class="widget-user-username">{{ $animal->dname }}</h3>
           <h5 class="widget-user-desc">{{ $animal->pname }}</h5>
         </div>
-        <!-- <div class="widget-user-image">
-          <img src="{{ asset('storage/'.$animal->picture) }}" width="50px" height="150px"/></td>
-        </div> -->
+        <div class="widget-user-image">
+          <img class="img-fluid" src="{{ asset('storage/'.$animal->picture) }}" width="50px" height="150px"/></td>
+        </div>
 
 
         <!-- Modal -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog" role="document">
             <div class="modal-content">
               <div class="modal-header">
@@ -108,7 +108,7 @@ desired effect
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="box-footer">
           <div class="row">
