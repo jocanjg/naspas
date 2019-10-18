@@ -62,8 +62,8 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-purple hold-transition sidebar-collapse">
-<div class="wrapper" style="bakcground-color: #ecf0f5;">
+<body class="skin-purple hold-transition sidebar-collapse" style="bakcground-color: #ecf0f5;">
+<div class="wrapper">
 
   <!-- Main Header -->
 
