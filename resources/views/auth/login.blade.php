@@ -65,7 +65,12 @@
                             </div>
                         </div>
                     </form>
-                  <a href="{{ url('/naspas') }}"><button type="submit" class="btn btn-primary">
+                </div>
+
+                <div class="card-body">
+                  <div class="card-header">Pogledaj kome je potrebna pomoc</div>
+
+                  <a href="{{ url('/naspas') }}"><button type="submit" class="btn btn-secondary btn-lg btn-block">
                       Pogledaj
                     </button></a>
                 </div>
