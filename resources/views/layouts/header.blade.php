@@ -45,6 +45,7 @@
                 <div class="pull-left">
                   <a href="{{ route('login') }}" class="btn btn-default btn-flat">Prijava</a>
                 </div>
+        
              @else
                <div class="pull-left">
                   <a href="{{ url('profile') }}" class="btn btn-default btn-flat">Profil</a>

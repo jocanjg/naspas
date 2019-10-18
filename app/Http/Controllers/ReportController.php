@@ -91,7 +91,7 @@ class ReportController extends Controller
   private function getExportingData($constraints) {
       return DB::table('animals')
       ->select('animals.pname', 'animals.dname',
-      'animals.age', 'animals.chip', 'animals.location_id', 'animals.address')
+      'animals.age', 'animals.chip', 'animals.location_id', 'animals.address', 'animals.hirurg')
       ->where('date', '>=', $constraints['from'])
       ->where('date', '<=', $constraints['to'])
       ->get()

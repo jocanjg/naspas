@@ -50,6 +50,7 @@ public function __construct()
       return view('animals/index', ['animals' => $animals, 'count' => $count, 'users' => $users]);
     }
 
+
     public function dashboard(){
 
       $count = DB::table('animals')->count();

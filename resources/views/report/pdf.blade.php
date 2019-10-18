@@ -32,6 +32,7 @@
                 <th width="20%">Čip</th>
                 <th width="10%">Starost</th>
                 <th width="15%">Lokacija</th>
+                <th width="15%">Hir. intervencija</th>
 
               </tr>
             </thead>
@@ -42,7 +43,7 @@
                   <td>{{ $animal['chip'] }}</td>
                   <td>{{ $animal['age'] }}</td>
                   <td>{{ $animal['address'] }}</td>
-
+                  <td>{{ $animal['hirurg'] }}</td>
 
               </tr>
             @endforeach
