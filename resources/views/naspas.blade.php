@@ -63,7 +63,7 @@ desired effect
 |---------------------------------------------------------|
 -->
 <body class="skin-purple hold-transition sidebar-collapse">
-<div class="wrapper">
+<div class="wrapper" style="bakcground-color: #ecf0f5;">
 
   <!-- Main Header -->
 
