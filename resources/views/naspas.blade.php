@@ -80,7 +80,7 @@ desired effect
       <div class="box box-widget widget-user">
         <!-- Add the bg color to the header using any of the bg-* classes -->
 
-        <div class="widget-user-header bg-aqua-active" style="background-image: url({{ asset('storage/'.$animal->picture) }}); background-repeat: no-repeat; background-size: cover; background-position: center center;">
+        <div class="widget-user-header bg-aqua-active" style="background-image: url({{ asset('storage/'.$animal->picture) }}); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 350px;">
           <h3 class="widget-user-username">{{ $animal->dname }}</h3>
           <h5 class="widget-user-desc">{{ $animal->pname }}</h5>
         </div>
