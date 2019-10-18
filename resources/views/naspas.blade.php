@@ -148,7 +148,7 @@ desired effect
     </div>
 @endforeach
   </div>
-</div>
+
   <!-- /.content-wrapper -->
 
   <!-- Footer -->
