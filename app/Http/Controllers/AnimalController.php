@@ -43,7 +43,7 @@ public function __construct()
 
 
 
-      $animals = DB::table('animals')
+      $animals = DB::table('animals')->orderByRaw('id DESC')
       ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'text as text')
       ->paginate(5);
