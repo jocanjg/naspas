@@ -45,7 +45,7 @@ class ReportController extends Controller
       ];
       $animals = $this->getExportingData($constraints);
       $pdf = PDF::loadView('report/pdf', ['animals' => $animals, 'searchingVals' => $constraints]);
-      return $pdf->download('report_from_'. $request['from'].'_to_'.$request['to'].'.pdf');
+      return $pdf->download('Izvestaj_od_'. $request['from'].'_do_'.$request['to'].'.pdf');
       // return view('system-mgmt/report/pdf', ['employees' => $employees, 'searchingVals' => $constraints]);
   }
 
