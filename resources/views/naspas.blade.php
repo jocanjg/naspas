@@ -146,8 +146,10 @@ desired effect
       </div>
       <!-- /.widget-user -->
     </div>
+    </div>
+
 @endforeach
-  </div>
+</div>
 
   <!-- /.content-wrapper -->
 
