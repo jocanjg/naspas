@@ -71,7 +71,7 @@ desired effect
 @include('layouts.naspasbar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper" height='100%'><br>
+  <div class="content-wrapper" style="height:100%;"><br>
     <!-- Content Header (Page header) -->
 @foreach ($animals as $animal)
     <div class="col-md-4"><br>
