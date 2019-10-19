@@ -56,7 +56,7 @@ public function __construct()
       $count = DB::table('animals')->count();
       $cusers = DB::table('users')->count();
       $users = User::paginate(5);
-      $animals = DB::table('animals')
+      $animals = DB::table('animals')->orderByRaw('id DESC')
       ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id')
       ->paginate(5);
