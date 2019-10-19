@@ -30,20 +30,24 @@
           <table id="example2" class="table table-bordered table-hover dataTable" role="grid" aria-describedby="example2_info">
             <thead>
               <tr role="row">
-                <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Ima Korisnika</th>
-                <th width="20%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
-                <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">First Name</th>
-                <th width="20%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Last Name</th>
+                <th width="10%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Status</th>
+                <th width="20%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending" aria-sort="ascending">Ima Korisnika</th>
+                <th width="30%" class="sorting" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Email: activate to sort column ascending">Email</th>
                 <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Opcije</th>
               </tr>
             </thead>
             <tbody>
      @foreach ($users as $user)
                 <tr role="row" class="odd">
+                  <td class="sorting_1">
+                    @if(!Auth::guest())
+                    <span class="badge badge-success">Online</span>
+                    @else
+                    <span class="badge badge-danger">Offline</span>
+                    @endif
+                  </td>
                   <td class="sorting_1">{{ $user->name}}</td>
                   <td>{{ $user->email}}</td>
-                  <td class="hidden-xs"></td>
-                  <td class="hidden-xs"></td>
                   <td>
                     <form class="row" method="POST" action="{{ route('users.destroy', ['id' => $user->id]) }}" onsubmit = "return confirm('Are you sure?')">
                         <input type="hidden" name="_method" value="DELETE">
@@ -67,11 +71,10 @@
             </tbody>
             <tfoot>
               <tr>
-                <th width="10%" rowspan="1" colspan="1">Ime Korisnika</th>
-                <th width="20%" rowspan="1" colspan="1">Email</th>
-                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">First Name</th>
-                <th class="hidden-xs" width="20%" rowspan="1" colspan="1">Last Name</th>
-                <th rowspan="1" colspan="2">Opcije</th>
+                <th width="10%" rowspan="1" colspan="1">Status</th>
+                <th width="20%" rowspan="1" colspan="1">Ime Korisnika</th>
+                <th width="30%" rowspan="1" colspan="1">Email</th>
+                <th width="30%"rowspan="1" colspan="2">Opcije</th>
               </tr>
             </tfoot>
           </table>
