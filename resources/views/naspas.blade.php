@@ -62,13 +62,13 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-purple layout-boxed sidebar-collapse">
+<body class="skin-purple fixed sidebar-mini">
 <div class="wrapper">
 
   <!-- Main Header -->
 
   <!-- Sidebar -->
-
+@include('layouts.naspasbar')
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
