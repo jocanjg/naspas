@@ -62,7 +62,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-purple layout-boxed sidebar-mini">
+<body class="skin-purple sidebar-mini">
 <div class="wrapper">
 
   @include('layouts.header0')
@@ -146,11 +146,10 @@ desired effect
       </div>
       <!-- /.widget-user -->
     </div>
-    </div>
+
 
 @endforeach
 </div>
-
   <!-- /.content-wrapper -->
 
   <!-- Footer -->
