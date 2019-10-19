@@ -40,7 +40,7 @@
      @foreach ($users as $user)
                 <tr role="row" class="odd">
                   <td class="sorting_1">
-                    @if(Auth::check())
+                    @if($user->isOnline())
                     <span class="badge badge-success">Online</span>
                     @else
                     <span class="badge badge-danger">Offline</span>
