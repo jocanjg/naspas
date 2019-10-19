@@ -19,6 +19,8 @@
 
 Auth::routes();
 Route::resource('naspas','NaspasController');
+Route::fallback('AnimalController@dashboard')->middleware('auth');
+Route::get('profil','AnimalController@dashboard')->middleware('auth');
 Route::get('home','AnimalController@dashboard')->middleware('auth');
 Route::get('dashboard','AnimalController@dashboard')->middleware('auth');
 Route::get('adopted','AnimalController@adopted')->middleware('auth');
