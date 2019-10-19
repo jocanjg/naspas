@@ -41,9 +41,9 @@
                 <tr role="row" class="odd">
                   <td class="sorting_1">
                     @if($user->isOnline())
-                    <span class="badge badge-success">Online</span>
+                    <span class="badge bg-green">Online</span>
                     @else
-                    <span class="badge badge-danger">Offline</span>
+                    <span class="badge bg-aqua">Offline</span>
                     @endif
                   </td>
                   <td class="sorting_1">{{ $user->name}}</td>
