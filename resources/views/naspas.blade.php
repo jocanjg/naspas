@@ -65,13 +65,13 @@ desired effect
 <body class="skin-purple fixed sidebar-mini">
 <div class="wrapper">
 
-  <!-- Main Header -->
+  @include('layouts.header0')
 
   <!-- Sidebar -->
 @include('layouts.naspasbar')
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <div class="content-wrapper"><br>
     <!-- Content Header (Page header) -->
 @foreach ($animals as $animal)
     <div class="col-md-4">
