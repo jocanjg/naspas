@@ -19,6 +19,7 @@
 
 Auth::routes();
 Route::resource('naspas','NaspasController');
+Route::get('home','AnimalController@dashboard')->middleware('auth');
 Route::get('dashboard','AnimalController@dashboard')->middleware('auth');
 Route::get('adopted','AnimalController@adopted')->middleware('auth');
 Route::resource('users','UserController')->middleware('auth');

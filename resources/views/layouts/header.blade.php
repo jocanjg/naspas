@@ -27,7 +27,7 @@
             <!-- The user image in the navbar-->
             <!-- <img src="{{ asset("/bower_components/AdminLTE/dist/img/user2-160x160.jpg") }}" class="user-image" alt="User Image"> -->
             <!-- hidden-xs hides the username on small devices so only the image appears. -->
-            <span class="hidden-xs">{{ Auth::user()->name }}</span>
+            <span class="">{{ Auth::user()->name }}</span>
           </a>
           <ul class="dropdown-menu">
             <!-- The user image in the menu -->
@@ -45,7 +45,7 @@
                 <div class="pull-left">
                   <a href="{{ route('login') }}" class="btn btn-default btn-flat">Prijava</a>
                 </div>
-        
+
              @else
                <div class="pull-left">
                   <a href="{{ url('profile') }}" class="btn btn-default btn-flat">Profil</a>
@@ -58,9 +58,9 @@
               @endif
             </li>
           </ul>
-          <li>
+          <!-- <li>
            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-         </li>
+         </li> -->
         </li>
       </ul>
     </div>
