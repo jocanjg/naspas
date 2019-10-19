@@ -62,7 +62,7 @@ desired effect
 |               | sidebar-mini                            |
 |---------------------------------------------------------|
 -->
-<body class="skin-purple sidebar-mini">
+<body class="skin-purple layout-boxed sidebar-mini">
 <div class="wrapper">
 
   @include('layouts.header0')
