@@ -74,7 +74,7 @@ desired effect
   <div class="content-wrapper"><br>
     <!-- Content Header (Page header) -->
 @foreach ($animals as $animal)
-    <div class="col-md-4">
+    <div class="col-md-4"><br>
       <!-- Widget: user widget style 1 -->
 
       <div class="box box-widget widget-user">
