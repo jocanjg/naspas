@@ -13,6 +13,7 @@ use App\Box;
 use App\Sort;
 use Session;
 use Auth;
+use PDF;
 
 
 
@@ -226,5 +227,23 @@ public function __construct()
       }
       return $query->paginate(5);
   }
+
+  public function exportPDF(Request $request, $id) {
+    $animals = Animal::find($id);
+    $pdf = PDF::loadView('report/pdf0', ['animals' => $animals, 'id' => $id]);
+    return $pdf->download('Profil.pdf');
+    // return view('system-mgmt/report/pdf', ['employees' => $employees, 'searchingVals' => $constraints]);
+}
+
+// private function getExportingData($id) {
+//     return DB::table('animals')
+//     ->select('animals.pname', 'animals.dname',
+//     'animals.age', 'animals.chip', 'animals.location_id', 'animals.address', 'animals.hirurg')
+//     ->get()
+//     ->map(function ($item, $key) {
+//     return (array) $item;
+//     })
+//     ->all();
+// }
 
 }

@@ -290,13 +290,21 @@
                           </div>
 
                           <div class="form-group col-md-6">
-                              <div class="col-md-12 col-md-offset-4">
+                            <div class="form-group col-md-3">
+                              <a href="{{ url('adopted') }}">
+                                <button type="" class="btn btn-success">
+                                    Udomljeno
+                                </button>
+                              </a>
+                            </div>
+                              <div class="col-md-3 col-md-offset-1">
                                   <button type="submit" class="btn btn-primary">
                                       Sačuvaj Izmene
                                   </button>
-
                               </div>
+
                           </div>
+
 
                           <div class="form-group col-md-6">
                           <div>
@@ -306,12 +314,12 @@
 
 
                     </form>
-                    <a href="{{ url('adopted') }}">
-                      <button type="" class="btn btn-success">
-                          Udomljeno
-                      </button>
-                    </a>
+
                 </div>
+                <a href="{{ route('animals.pdf', ['id' => $animal->id]) }}" class="btn btn-warning col-sm-4 col-xs-8  btn-margin">
+                    Preuzmi PDF
+                </a>
+
             </div>
         </div>
     </div>
