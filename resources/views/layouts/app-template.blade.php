@@ -80,7 +80,7 @@
     |               | sidebar-mini                            |
     |---------------------------------------------------------|
     -->
-  <body class="hold-transition skin-purple sidebar-mini fixed">
+  <body class="sidebar-mini skin-purple-light sidebar-collapse fixed">
     <div class="wrapper">
     <!-- Main Header -->
     @include('layouts.header')

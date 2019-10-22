@@ -1,21 +1,26 @@
- <!DOCTYPE html>
 <html lang="en">
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <style>
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      td, th {
-        border: solid 2px;
-        padding: 10px 5px;
-      }
-      tr {
-        text-align: center;
-      }
+    table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #4CAF50;
+  color: white;
+}
+  
       .container {
         width: 100%;
         text-align: center;
