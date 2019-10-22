@@ -19,6 +19,7 @@
 
 Auth::routes();
 Route::resource('naspas','NaspasController');
+Route::get('/pretraga','NaspasController@pretraga');
 Route::fallback('AnimalController@dashboard')->middleware('auth');
 Route::get('profil','AnimalController@dashboard')->middleware('auth');
 Route::get('home','AnimalController@dashboard')->middleware('auth');

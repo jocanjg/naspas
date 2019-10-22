@@ -22,7 +22,7 @@
     <!-- Sidebar Menu -->
     <ul class="sidebar-menu">
       <!-- Optionally, you can add icons to the links -->
-      <li class="treeview"><a href=""><i class="fa fa-server "></i> <span>Naspas Baza</span></a></li>
+      <li class="treeview"><a href="{{ url('/pretraga')}}"><i class="fa fa-server "></i> <span>Naspas Baza</span></a></li>
       <li><a href=""><i class="fa fa-paw "></i> <span>Doniraj i Pomozi</span></a></li>
       <li class="treeview">
         <a href="#"><i class="fa fa-shopping-cart"></i> <span>Prodavnica</span>
