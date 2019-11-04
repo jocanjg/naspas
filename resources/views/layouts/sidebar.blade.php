@@ -32,7 +32,9 @@
     <ul class="sidebar-menu">
       <!-- Optionally, you can add icons to the links -->
       <li class="treeview"><a href="{{ url('dashboard')}}"><i class="fa fa-server "></i> <span>Početna strana</span></a></li>
+    @can('isAdmin')
       <li><a href="{{ url('animals')}}"><i class="fa fa-paw "></i> <span>Psi i Mačke</span></a></li>
+    @endcan
       <li class="treeview">
         <a href="#"><i class="fa fa-cog"></i> <span>Podešavanje sistema</span>
           <span class="pull-right-container">

@@ -26,6 +26,15 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="user_type" class="col-md-4 col-form-label text-md-right">{{ __('User_type') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="user_type" type="text" class="form-control{{ $errors->has('user_type') ? ' is-invalid' : '' }}" name="user_type" value="{{ old('user_type') }}" required autofocus>
+                        
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
 
                             <div class="col-md-6">
