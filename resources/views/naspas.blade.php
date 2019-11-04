@@ -74,78 +74,45 @@ desired effect
   <div class="content-wrapper" style="height:100%;"><br>
     <!-- Content Header (Page header) -->
 @foreach ($animals as $animal)
-    <div class="col-md-4"><br>
-      <!-- Widget: user widget style 1 -->
+<div class="col-md-3">
 
-      <div class="box box-widget widget-user">
-        <!-- Add the bg color to the header using any of the bg-* classes -->
-
-        <div class="widget-user-header bg-aqua-active" style="background-image: url({{ asset('storage/'.$animal->picture) }}); background-repeat: no-repeat; background-size: cover; background-position: center center; height: 410px;">
-          <h3 class="widget-user-username">{{ $animal->dname }}</h3>
-          <h5 class="widget-user-desc">{{ $animal->pname }}</h5>
-        </div>
-        <div class="widget-user-image">
-          <!-- <img class="img-fluid"  src="{{ asset('storage/'.$animal->picture) }}"/></td> -->
-        </div>
+  <!-- Profile Image -->
+  <div class="box box-primary">
+    <div class="box-body box-profile">
+      <!-- <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture"> -->
+      <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
+      <h3 class="profile-username text-center">{{ $animal->dname}}</h3>
 
 
-        <!-- Modal -->
-        <!-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Slika</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                  <span aria-hidden="true">&times;</span>
-                </button>
-              </div>
-              <div class="modal-body" class="width:20%;">
-                  <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
-                <button type="button" class="btn btn-primary">Dodaj</button>
-              </div>
-            </div>
-          </div>
-        </div> -->
 
-        <div class="box-footer">
-          <div class="row">
-            <div class="col-sm-4 border-right">
-              <div class="description-block">
-                <h5 class="description-header">{{ $animal->age }}<small>god</small> </h5>
-                <span class="description-text">Starost</span>
-              </div>
-              <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-4 border-right">
-              <div class="description-block">
-                <h5 class="description-header"><?php if ($animal->gender == 1) {
-                  echo 'Mužijak';
-                } else {
-                  echo 'Ženka';
-                }?></h5>
-                <span class="description-text">Pol</span>
-              </div>
-              <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-            <div class="col-sm-4">
-              <div class="description-block">
-                <h5 class="description-header">{{ $animal->tezina }}<small>kg</small></h5>
-                <span class="description-text">Težina</span>
-              </div>
-              <!-- /.description-block -->
-            </div>
-            <!-- /.col -->
-          </div>
-          <!-- /.row -->
-        </div>
-      </div>
-      <!-- /.widget-user -->
+      <ul class="list-group list-group-unbordered">
+        <li class="list-group-item">
+          <b>Pol</b> <a class="pull-right">
+            @if($animal->gender == 1)
+            <option value="1">Mužijak</option>
+            @else
+            <option value="2">Ženka</option>
+            @endif
+        </a>
+        </li>
+        <li class="list-group-item">
+          <b>Težina</b> <a class="pull-right">{{ $animal->tezina }} kg</a>
+        </li>
+        <li class="list-group-item">
+          <b>Starost</b> <a class="pull-right">{{ $animal->age }} god</a>
+        </li>
+      </ul>
+
+
+    </div>
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
+
+  <!-- About Me Box -->
+  <!-- /.box -->
 </div>
+    
 @endforeach
 
 </div>
