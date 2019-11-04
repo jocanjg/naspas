@@ -74,11 +74,11 @@
 @endcannot
 
 
-@can('isAdmin')
+@if( Gate::check('isAdmin') || Gate::check('isAuthor') )
 
         <div class="col-md-10 col-md-offset-2" style="margin-left: 20px;">
             <div class="panel panel-default">
-                <div class="panel-heading">Pogledaj profil životinje</div>
+                <div class="panel-heading">Izmeni profil životinje</div>
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{route('animals.update', ['id' => $animal->id])}}" enctype="multipart/form-data">
                       <input type="hidden" name="_method" value="PATCH">
@@ -517,7 +517,7 @@
             </div>
         </div>
 
-        @endcan
+        @endif
     </div>
 </div>
 @endsection
