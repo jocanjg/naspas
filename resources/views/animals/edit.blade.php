@@ -3,6 +3,7 @@
 @section('action-content')
 <div class="container">
     <div class="row"><br>
+@cannot('isAdmin')
       <div class="col-md-3">
 
         <!-- Profile Image -->
@@ -32,7 +33,7 @@
               </li>
             </ul>
 
-          
+
           </div>
           <!-- /.box-body -->
         </div>
@@ -70,7 +71,7 @@
       </div>
         </div>
 
-
+@endcannot
 
 
 @can('isAdmin')
@@ -124,6 +125,21 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }} col-md-5">
+                            <label for="address" class="col-md-4 control-label">Adresa</label>
+
+                            <div class="col-md-8">
+                                <input id="address" type="text" class="form-control" name="address" value="{{ $animal->address }}" required>
+
+                                @if ($errors->has('address'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('address') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+
                         <div class="form-group col-md-5">
                             <label class="col-md-4 control-label">Datum</label>
                             <div class="col-md-8">
@@ -149,19 +165,6 @@
                         </div>
 
 
-                        <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }} col-md-5">
-                            <label for="address" class="col-md-4 control-label">Adresa</label>
-
-                            <div class="col-md-8">
-                                <input id="address" type="text" class="form-control" name="address" value="{{ $animal->address }}" required>
-
-                                @if ($errors->has('address'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('address') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
 
 
                         <div class="form-group col-md-5">
@@ -193,7 +196,7 @@
 
 
 
-                        <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }} col-md-5">
+                        <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }} col-md-3">
                             <label for="age" class="col-md-4 control-label">Starost životinje</label>
 
                             <div class="col-md-6">
@@ -241,7 +244,7 @@
                             </div>
                         </div>
 
-                        <div class="form-group col-md-5">
+                        <div class="form-group col-md-3">
                             <label for="tezina" class="col-md-4 control-label">Težina</label>
 
                             <div class="col-md-8">
@@ -256,7 +259,7 @@
                         </div>
 
 
-                        <div class="form-group{{ $errors->has('department_id') ? ' has-error' : '' }} col-md-5">
+                        <div class="form-group{{ $errors->has('department_id') ? ' has-error' : '' }} col-md-3">
                             <label class="col-md-4 control-label">Kavez</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="box">
@@ -268,6 +271,19 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }} col-md-3">
+                            <label class="col-md-4 control-label">Pol</label>
+                            <div class="col-md-6">
+                                <select class="form-control" name="gender">
+                                  @if($animal->gender == 1)
+                                  <option value="1">Mužijak</option>
+                                  @else
+                                  <option value="2">Ženka</option>
+                                  @endif
+                                </select>
+
+                            </div>
+                        </div>
 
                         <div class="form-group{{ $errors->has('size_id') ? ' has-error' : '' }} col-md-5">
                             <label class="col-md-4 control-label">Veličina</label>
@@ -288,9 +304,9 @@
 
                       <div class="form-group col-md-5">
                           <label for="avatar" class="col-md-4 control-label" >Slika</label>
-                          <div class="col-md-6" >
+                          <div class="col-md-6" ><img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
                             <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
   Pogledaj sliku
 </button>
 
@@ -329,15 +345,15 @@
                       </div> -->
 
 
-                        <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }} col-md-5">
-                            <label class="col-md-4 control-label">Pol</label>
+                        <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }} col-md-3">
+                            <label class="col-md-4 control-label">Udomljen</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="gender">
-                                  @if($animal->gender == 1)
-                                  <option value="1">Mužijak</option>
-                                  @else
-                                  <option value="2">Ženka</option>
-                                  @endif
+
+                                  <option value="1">Da</option>
+
+                                  <option value="2">Ne</option>
+
                                 </select>
 
                             </div>
@@ -361,19 +377,123 @@
 
                           </div>
 
-                          <div class="form-group col-md-6">
-                            <div class="form-group col-md-3">
-                              <a href="{{ url('adopted') }}">
-                                <button type="" class="btn btn-success">
-                                    Udomljeno
-                                </button>
-                              </a>
-                            </div>
-                              <div class="col-md-3 col-md-offset-1">
-                                  <button type="submit" class="btn btn-primary">
-                                      Sačuvaj Izmene
-                                  </button>
+
+
+
+
+
+
+                          <div class="form-group col-md-3">
+                            <a class="btn btn-app" href="{{ route('animals.pdf', ['id' => $animal->id]) }}">
+                              <i class="fa fa-save"></i>   Preuzmi PDF
+                            </a>
+
+                            <a class="btn btn-app">
+                              <!-- <span class="badge bg-purple">Udomljen</span> -->
+                              <i class="fa fa-users" data-toggle="modal" data-target="#exampleModal2"></i> Udomljen
+                            </a>
+
+                            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModal2Label">Vlasnik</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body" class="width:20%;">
+                                    <div class="form-group{{ $errors->has('pname') ? ' has-error' : '' }} col-md-5">
+                                        <label for="firstname" class="col-md-4 control-label">Ime</label>
+
+                                        <div class="col-md-8">
+                                            <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" required autofocus>
+
+                                            @if ($errors->has('firstname'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('firstname') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }} col-md-5">
+                                        <label for="lastname" class="col-md-4 control-label">Prezime</label>
+
+                                        <div class="col-md-8">
+                                            <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required>
+
+                                            @if ($errors->has('lastname'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('lastname') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="form-group col-md-5">
+                                        <label for="avatar" class="col-md-4 control-label" >Picture</label>
+                                        <div class="col-md-6">
+                                            <input type="file" id="picture" name="picture" required >
+                                        </div>
+                                    </div> -->
+
+
+
+                                    <div class="form-group col-md-5">
+                                        <label class="col-md-4 control-label">Date</label>
+                                        <div class="col-md-8">
+                                            <div class="input-group date">
+                                                <div class="input-group-addon">
+                                                    <i class="fa fa-calendar"></i>
+                                                </div>
+                                                <input type="text" value="<?php  $mytime = Carbon\Carbon::now();
+                                                 echo $mytime->toDateTimeString(); ?>" name="date" class="form-control pull-right" id="date" required>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }} col-md-5">
+                                        <label for="address" class="col-md-4 control-label">Address</label>
+
+                                        <div class="col-md-8">
+                                            <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
+
+                                            @if ($errors->has('address'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('address') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="form-group{{ $errors->has('idcard') ? ' has-error' : '' }} col-md-5">
+                                        <label for="idcard" class="col-md-4 control-label">ID card number</label>
+
+                                        <div class="col-md-6">
+                                            <input id="idcard" type="text" class="form-control" name="idcard" value="{{ old('idcard') }}" required>
+
+                                            @if ($errors->has('idcard'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('idcard') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                  </div>
+                                  <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+
+                                  </div>
+                                </div>
                               </div>
+                            </div>
+
 
                           </div>
 
@@ -383,14 +503,16 @@
                             <textarea class="textarea" placeholder="" name="text" id="text" style="width: 100%; height: 105px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">{{ $animal->text }}</textarea>
                           </div>
                           </div>
-
+                          <div class="col-md-3 col-md-offset-1">
+                              <button type="submit" class="btn btn-success">
+                                  Sačuvaj Izmene
+                              </button>
+                          </div>
 
                     </form>
 
                 </div>
-                <a href="{{ route('animals.pdf', ['id' => $animal->id]) }}" class="btn btn-warning col-sm-4 col-xs-8  btn-margin">
-                    Preuzmi PDF
-                </a>
+
 
             </div>
         </div>
