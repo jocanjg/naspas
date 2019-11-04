@@ -9,8 +9,8 @@
         <div class="col-sm-4">
           <h3 class="box-title">Lista životinja</h3>
           <p>Pretraži bazu pomoću čipa</p>
-          <li>U slučaju da ne postoji traženi pas ili mačka, klikni na Dodaj dugme</li>
-          <li>Brisanje podataka iz baze nije dozvoljeno. Unešene greške ukloniće tehnička podrška</li>
+          <!-- <li>U slučaju da ne postoji traženi pas ili mačka, kontktiraj lokalno prihvatilište ili azil</li> -->
+
 
         </div>
 
@@ -42,11 +42,11 @@
            @endcomponent
       </form>
     </div>
-
+@can('isAdmin')
     <div class="col-sm-4">
       <a class="btn btn-lg btn-primary" href="{{ route('animals.create') }}">Dodaj</a>
     </div>
-
+@endcan
     </div>
   </div>
   <!-- /.box-header -->
@@ -63,7 +63,7 @@
             <thead>
               <tr role="row">
                 <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Slika</th>
-                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime osobe</th>
+                @can('isAdmin')<th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime osobe</th>@endcan
                 <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Ime životinje</th>
                 <th width="8%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending">Čip</th>
                 <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Datum</th>
@@ -79,7 +79,7 @@
 
                 <tr role="row" class="odd">
                   <td><img src="{{ asset('storage/'.$animal->picture) }}" width="50px" height="50px"/></td>
-                  <td class="hidden-xs">{{ $animal->pname }}</td>
+                  @can('isAdmin')<td class="hidden-xs">{{ $animal->pname }}</td>@endcan
                   <td class="hidden-xs">{{ $animal->dname }}</td>
                   <td class="sorting_1">{{ $animal->chip }}</td>
                   <td class="hidden-xs">{{ $animal->date}}</td>
@@ -93,14 +93,12 @@
                         <a href="{{ route('animals.edit', ['id' => $animal->id]) }}" class="btn btn-warning col-sm-4 col-xs-8  btn-margin">
                         Pogledaj
                         </a>
-
+@can('isAdmin')
                         <button type="submit"
-                        <?php if( 1 !== $users)
-                          { echo "style='display:none;'";} ?>
                           class="btn btn-danger col-sm-4 col-xs-8 btn-margin">
                          Ukloni
                        </button>
-
+@endcan
                     </form>
                   </td>
               </tr>
@@ -109,7 +107,7 @@
             <tfoot>
               <tr>
                 <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Slika</th>
-                <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime osobe</th>
+                @can('isAdmin')<th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime osobe</th>@endcan
                 <th width="12%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Ime životinje</th>
                 <th width="8%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending">Čip</th>
                 <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Datum</th>

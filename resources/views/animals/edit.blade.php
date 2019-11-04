@@ -2,7 +2,79 @@
 
 @section('action-content')
 <div class="container">
-    <div class="row">
+    <div class="row"><br>
+      <div class="col-md-3">
+
+        <!-- Profile Image -->
+        <div class="box box-primary">
+          <div class="box-body box-profile">
+            <!-- <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture"> -->
+            <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
+            <h3 class="profile-username text-center">{{ $animal->dname}}</h3>
+
+
+
+            <ul class="list-group list-group-unbordered">
+              <li class="list-group-item">
+                <b>Pol</b> <a class="pull-right">
+                  @if($animal->gender == 1)
+                  <option value="1">Mužijak</option>
+                  @else
+                  <option value="2">Ženka</option>
+                  @endif
+              </a>
+              </li>
+              <li class="list-group-item">
+                <b>Težina</b> <a class="pull-right">{{ $animal->tezina }} kg</a>
+              </li>
+              <li class="list-group-item">
+                <b>Starost</b> <a class="pull-right">{{ $animal->age }} god</a>
+              </li>
+            </ul>
+
+          
+          </div>
+          <!-- /.box-body -->
+        </div>
+        <!-- /.box -->
+
+        <!-- About Me Box -->
+        <!-- /.box -->
+      </div>
+      <div class="col-md-3">
+
+
+      <div class="box box-primary">
+        <div class="box-header with-border">
+          <h3 class="box-title">Info</h3>
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body">
+          <strong><i class="fa fa-book margin-r-5"></i> Opis</strong>
+
+          <p class="text-muted">
+            {{ $animal->text }}
+          </p>
+
+          <hr>
+
+          <strong><i class="fa fa-map-marker margin-r-5"></i> Lokacija</strong>
+
+          <p class="text-muted">{{ $animal->address }}</p>
+
+          <hr>
+
+
+        </div>
+        <!-- /.box-body -->
+      </div>
+        </div>
+
+
+
+
+@can('isAdmin')
+
         <div class="col-md-10 col-md-offset-2" style="margin-left: 20px;">
             <div class="panel panel-default">
                 <div class="panel-heading">Pogledaj profil životinje</div>
@@ -322,6 +394,8 @@
 
             </div>
         </div>
+
+        @endcan
     </div>
 </div>
 @endsection

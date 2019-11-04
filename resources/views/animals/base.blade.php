@@ -2,7 +2,7 @@
 @section('content')
   <div class="content-wrapper">
     <!-- Content Header (Page header) -->
-    <section class="content-header">
+  @can('isAdmin')  <section class="content-header">
       <h1>
         Psi i Mačke
       </h1>
@@ -10,7 +10,7 @@
         <!-- li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li-->
       <a href="{{ url('animals') }}"><li class="active">Lista pasa</li></a>
       </ol>
-    </section>
+    </section>@endcan
     @yield('action-content')
     <!-- /.content -->
   </div>

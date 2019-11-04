@@ -56,14 +56,12 @@
                         Pogledaj
                         </a>
 
-
+                        @can('isAdmin')
                          <button type="submit"
-                         <?php if( 1 !== $admin)
-                           { echo "style='display:none;'";} ?>
                            class="btn btn-danger col-sm-3 col-xs-5 btn-margin">
                           Ukloni
                         </button>
-
+                        @endcan
                     </form>
                   </td>
               </tr>

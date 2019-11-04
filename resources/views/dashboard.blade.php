@@ -103,6 +103,7 @@ desired effect
         <!-- ./col -->
 
         <!-- ./col -->
+        @can('isAdmin')
         <div class="col-lg-3 col-xs-6">
           <!-- small box -->
           <div class="small-box bg-aqua">
@@ -132,6 +133,7 @@ desired effect
             <a href="#" class="small-box-footer">Više informacija <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
+        @endcan
         <!-- ./col -->
 
         <div class="col-lg-3 col-xs-6">
@@ -153,6 +155,7 @@ desired effect
 
 
 
+      @can('isAdmin')
       <div class="box box-info">
           <div class="box-header with-border">
             <h3 class="box-title">Poslednje</h3>
@@ -205,6 +208,7 @@ desired effect
           </div>
           <!-- /.box-footer -->
         </div>
+
         <!-- /.box -->
         <div class="col-md-6">
             <!-- USERS LIST -->
@@ -242,6 +246,7 @@ desired effect
             </div>
             <!--/.box -->
           </div>
+          @endcan
           <!-- /.col -->
           <div class="row">
             <div class="col-md-3 col-sm-6 col-xs-12">
@@ -257,6 +262,7 @@ desired effect
               <!-- /.info-box -->
             </div>
             <!-- /.col -->
+            @can('isAdmin')
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
                 <span class="info-box-icon bg-red"><i class="fa fa-ambulance"></i></span>
@@ -270,7 +276,7 @@ desired effect
               <!-- /.info-box -->
             </div>
             <!-- /.col -->
-
+            @endcan
             <!-- fix for small devices only -->
             <div class="clearfix visible-sm-block"></div>
 
@@ -287,6 +293,7 @@ desired effect
               <!-- /.info-box -->
             </div>
             <!-- /.col -->
+            @can('isAdmin')
             <div class="col-md-3 col-sm-6 col-xs-12">
               <div class="info-box">
                 <span class="info-box-icon bg-gray"><i class="ion ion-ios-people-outline"></i></span>
@@ -299,7 +306,9 @@ desired effect
               </div>
               <!-- /.info-box -->
             </div>
+            @endcan
             <!-- /.col -->
+
           </div>
 
 

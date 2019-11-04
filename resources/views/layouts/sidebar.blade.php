@@ -32,9 +32,8 @@
     <ul class="sidebar-menu">
       <!-- Optionally, you can add icons to the links -->
       <li class="treeview"><a href="{{ url('dashboard')}}"><i class="fa fa-server "></i> <span>Početna strana</span></a></li>
-    @can('isAdmin')
       <li><a href="{{ url('animals')}}"><i class="fa fa-paw "></i> <span>Psi i Mačke</span></a></li>
-    @endcan
+@can('isAdmin')
       <li class="treeview">
         <a href="#"><i class="fa fa-cog"></i> <span>Podešavanje sistema</span>
           <span class="pull-right-container">
@@ -50,8 +49,9 @@
           <li><a href="{{ url('sorts')}}"><i class="fa fa-paw"></i>Vrste / Rase</a></li>
           <li><a href="{{ url('reports')}}"><i class="fa fa-file"></i>Izveštaji</a></li>
         </ul>
-      </li>
+      </li>          
       <li><a href="{{ route('users.index') }}"><i class="fa fa-users"></i> <span>Korisnici</span></a></li>
+      @endcan
     </ul>
     <!-- /.sidebar-menu -->
   </section>
