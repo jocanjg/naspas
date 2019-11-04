@@ -3,7 +3,7 @@
 @section('action-content')
 <div class="container">
     <div class="row"><br>
-@cannot('isAdmin')
+@can('isUser')
       <div class="col-md-3">
 
         <!-- Profile Image -->
@@ -71,7 +71,7 @@
       </div>
         </div>
 
-@endcannot
+@endcan
 
 
 @if( Gate::check('isAdmin') || Gate::check('isAuthor') )
