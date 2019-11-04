@@ -83,7 +83,36 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{route('animals.update', ['id' => $animal->id])}}" enctype="multipart/form-data">
                       <input type="hidden" name="_method" value="PATCH">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <div class="col-md-6" ><img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
+                        <!-- Button trigger modal -->
+                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
+                      Pogledaj sliku
+                      </button>
 
+                      <!-- Modal -->
+                      <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                      <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">Slika</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                      </button>
+                      </div>
+                      <div class="modal-body" class="width:20%;">
+                      <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
+                      </div>
+                      <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+                      <button type="button" class="btn btn-primary">Dodaj</button>
+                      </div>
+                      </div>
+                      </div>
+                      </div>
+
+
+                      <input type="file" id="picture" name="picture" />
+                      </div>
                         <div class="form-group{{ $errors->has('pname') ? ' has-error' : '' }} col-md-5">
                             <label for="pname" class="col-md-4 control-label">Ime Korisnika</label>
 
@@ -304,36 +333,7 @@
 
                       <div class="form-group col-md-5">
                           <label for="avatar" class="col-md-4 control-label" >Slika</label>
-                          <div class="col-md-6" ><img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
-                            <!-- Button trigger modal -->
-<button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
-  Pogledaj sliku
-</button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Slika</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body" class="width:20%;">
-          <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
-        <button type="button" class="btn btn-primary">Dodaj</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-                          <input type="file" id="picture" name="picture" />
-                          </div>
                       </div>
 
                       <!-- <div class="form-group col-md-5">
