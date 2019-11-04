@@ -210,6 +210,7 @@ desired effect
         </div>
 
         <!-- /.box -->
+        @can('isAdmin')
         <div class="col-md-6">
             <!-- USERS LIST -->
             <div class="box box-success">
@@ -246,6 +247,7 @@ desired effect
             </div>
             <!--/.box -->
           </div>
+          @endcan
           @endif
           <!-- /.col -->
           <div class="row">
