@@ -9,6 +9,7 @@
         <!-- Profile Image -->
         <div class="box box-primary">
           <div class="box-body box-profile">
+
             <!-- <img class="profile-user-img img-responsive img-circle" src="../../dist/img/user4-128x128.jpg" alt="User profile picture"> -->
             <img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
             <h3 class="profile-username text-center">{{ $animal->dname}}</h3>
@@ -88,7 +89,19 @@
                       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
                       Pogledaj sliku
                       </button>
+                      <div class="form-group{{ $errors->has('udomljen') ? ' has-error' : '' }} col-md-6">
 
+                          <div class="col-md-3">
+
+                                  @if($animal->vfirstname)
+                            <i class="fa fa-circle-o text-green">   Udomljen</i>
+                                @else
+                                <i class="fa fa-circle-o text-red">   Nije Udomljen</i>
+                                @endif
+
+
+                          </div>
+                      </div>
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog" role="document">
@@ -331,10 +344,10 @@
                         </div>
 
 
-                      <div class="form-group col-md-5">
+                      <!-- <div class="form-group col-md-5">
                           <label for="avatar" class="col-md-4 control-label" >Slika</label>
 
-                      </div>
+                      </div> -->
 
                       <!-- <div class="form-group col-md-5">
                           <label class="col-md-4 control-label">Veterinar</label>
@@ -345,19 +358,6 @@
                       </div> -->
 
 
-                        <div class="form-group{{ $errors->has('location_id') ? ' has-error' : '' }} col-md-3">
-                            <label class="col-md-4 control-label">Udomljen</label>
-                            <div class="col-md-6">
-                                <select class="form-control" name="gender">
-
-                                  <option value="1">Da</option>
-
-                                  <option value="2">Ne</option>
-
-                                </select>
-
-                            </div>
-                        </div>
 
 
 
@@ -376,10 +376,6 @@
                               </div><br><br><br>
 
                           </div>
-
-
-
-
 
 
 
@@ -403,29 +399,29 @@
                                     </button>
                                   </div>
                                   <div class="modal-body" class="width:20%;">
-                                    <div class="form-group{{ $errors->has('pname') ? ' has-error' : '' }} col-md-5">
-                                        <label for="firstname" class="col-md-4 control-label">Ime</label>
+                                    <div class="form-group{{ $errors->has('vfirstname') ? ' has-error' : '' }} col-md-5">
+                                        <label for="vfirstname" class="col-md-4 control-label">Ime</label>
 
-                                        <div class="col-md-8">
-                                            <input id="firstname" type="text" class="form-control" name="firstname" value="{{ old('firstname') }}" required autofocus>
+                                        <div class="col-md-12">
+                                            <input id="vfirstname" type="text" class="form-control" name="vfirstname" value="{{ $animal->vfirstname }}" >
 
-                                            @if ($errors->has('firstname'))
+                                            @if ($errors->has('vfirstname'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('firstname') }}</strong>
+                                                    <strong>{{ $errors->first('vfirstname') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
                                     </div>
 
-                                    <div class="form-group{{ $errors->has('lastname') ? ' has-error' : '' }} col-md-5">
-                                        <label for="lastname" class="col-md-4 control-label">Prezime</label>
+                                    <div class="form-group{{ $errors->has('vlastname') ? ' has-error' : '' }} col-md-5">
+                                        <label for="vlastname" class="col-md-4 control-label">Prezime</label>
 
-                                        <div class="col-md-8">
-                                            <input id="lastname" type="text" class="form-control" name="lastname" value="{{ old('lastname') }}" required>
+                                        <div class="col-md-12">
+                                            <input id="vlastname" type="text" class="form-control" name="vlastname" value="{{ $animal->vlastname }}">
 
-                                            @if ($errors->has('lastname'))
+                                            @if ($errors->has('vlastname'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('lastname') }}</strong>
+                                                    <strong>{{ $errors->first('vlastname') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
@@ -440,28 +436,17 @@
 
 
 
-                                    <div class="form-group col-md-5">
-                                        <label class="col-md-4 control-label">Date</label>
-                                        <div class="col-md-8">
-                                            <div class="input-group date">
-                                                <div class="input-group-addon">
-                                                    <i class="fa fa-calendar"></i>
-                                                </div>
-                                                <input type="text" value="<?php  $mytime = Carbon\Carbon::now();
-                                                 echo $mytime->toDateTimeString(); ?>" name="date" class="form-control pull-right" id="date" required>
-                                            </div>
-                                        </div>
-                                    </div>
 
-                                    <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }} col-md-5">
-                                        <label for="address" class="col-md-4 control-label">Address</label>
+
+                                    <div class="form-group{{ $errors->has('vaddress') ? ' has-error' : '' }} col-md-8">
+                                        <label for="vaddress" class="col-md-4 control-label">Adresa</label>
 
                                         <div class="col-md-8">
-                                            <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}" required>
+                                            <input id="vaddress" type="text" class="form-control" name="vaddress" value="{{ $animal->vaddress }}">
 
-                                            @if ($errors->has('address'))
+                                            @if ($errors->has('vaddress'))
                                                 <span class="help-block">
-                                                    <strong>{{ $errors->first('address') }}</strong>
+                                                    <strong>{{ $errors->first('vaddress') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
@@ -471,11 +456,11 @@
 
 
 
-                                    <div class="form-group{{ $errors->has('idcard') ? ' has-error' : '' }} col-md-5">
-                                        <label for="idcard" class="col-md-4 control-label">ID card number</label>
+                                    <div class="form-group{{ $errors->has('idcard') ? ' has-error' : '' }} col-md-8">
+                                        <label for="idcard" class="col-md-4 control-label">Broj lične karte</label>
 
-                                        <div class="col-md-6">
-                                            <input id="idcard" type="text" class="form-control" name="idcard" value="{{ old('idcard') }}" required>
+                                        <div class="col-md-8">
+                                            <input id="idcard" type="text" class="form-control" name="idcard" value="{{ $animal->idcard }}" >
 
                                             @if ($errors->has('idcard'))
                                                 <span class="help-block">
@@ -484,10 +469,23 @@
                                             @endif
                                         </div>
                                     </div>
+                                    <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }} col-md-8">
+                                        <label for="tel" class="col-md-4 control-label">Broj telefona</label>
+
+                                        <div class="col-md-8">
+                                            <input id="tel" type="text" class="form-control" name="tel" value="{{ $animal->tel }}">
+
+                                            @if ($errors->has('tel'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('tel') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
 
                                   </div>
                                   <div class="modal-footer">
-                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button>
+                                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button> -->
 
                                   </div>
                                 </div>

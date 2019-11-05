@@ -54,6 +54,7 @@ public function __construct()
 
     public function dashboard(){
 
+      $udomljen = DB::table('animals')->whereRaw('vfirstname <> ""')->get()->count();
       $count = DB::table('animals')->count();
       $cusers = DB::table('users')->count();
       $users = User::paginate(5);
@@ -63,7 +64,7 @@ public function __construct()
       ->paginate(5);
       $capacitet = 200;
       $rez= ($count * 100) / $capacitet;
-      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez]);
+      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen]);
 
     }
 
@@ -157,7 +158,7 @@ public function __construct()
       $animals = Animal::findOrFail($id);
       $this->validateInput($request);
       // Upload image
-      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text','sort','size', 'box', 'gender', 'hirurg', 'tezina', 'datein'];
+      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text','sort','size', 'box', 'gender', 'hirurg', 'tezina', 'datein', 'vfirstname', 'vlastname', 'vaddress', 'idcard', 'tel','udomljen'];
       $input = $this->createQueryInput($keys, $request);
         if ($request->file('picture')) {
           $path = $request->file('picture')->store('avatars');
