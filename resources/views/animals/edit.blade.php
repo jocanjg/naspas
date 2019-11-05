@@ -388,9 +388,9 @@
                               <i class="fa fa-save"></i>   Preuzmi PDF
                             </a>
 
-                            <a class="btn btn-app">
+                            <a class="btn btn-app" data-toggle="modal" data-target="#exampleModal2">
                               <!-- <span class="badge bg-purple">Udomljen</span> -->
-                              <i class="fa fa-users" data-toggle="modal" data-target="#exampleModal2"></i> Udomljen
+                              <i class="fa fa-users" ></i> Udomljen
                             </a>
 
                             <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
