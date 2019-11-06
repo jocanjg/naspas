@@ -20,7 +20,7 @@ th {
   background-color: #4CAF50;
   color: white;
 }
-  
+
       .container {
         width: 100%;
         text-align: center;
@@ -35,6 +35,7 @@ th {
               <tr role="row">
                 <th width="15%">Ime</th>
                 <th width="20%">Chip</th>
+                  <th width="20%">Chip</th>
                 <th width="10%">Starost</th>
                 <th width="15%">Lokacija</th>
                 <th width="15%">Hir. intervencija</th>
@@ -49,6 +50,7 @@ th {
 
                 <tr role="row" class="odd">
                   <td>{{ $animals['dname'] }} </td>
+                  <td><img  src="{{ asset('storage/'.$animals['picture']) }}" class="img-fluid" style="width:100%; height:100%;"/></td>
                   <td>{{ $animals['chip'] }}</td>
                   <td>{{ $animals['age'] }}</td>
                   <td>{{ $animals['address'] }}</td>
