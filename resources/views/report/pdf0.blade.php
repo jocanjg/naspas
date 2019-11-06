@@ -1,61 +1,57 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-
-<style>
-.card {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-  font-family: arial;
-}
-
-.title {
-  color: grey;
-  font-size: 18px;
-}
-
-button {
-  border: none;
-  outline: 0;
-  display: inline-block;
-  padding: 8px;
-  color: white;
-  background-color: #000;
-  text-align: center;
-  cursor: pointer;
-  width: 100%;
-  font-size: 18px;
-}
-
-a {
-  text-decoration: none;
-  font-size: 22px;
-  color: black;
-}
-
-button:hover, a:hover {
-  opacity: 0.7;
-}
-</style>
+  <title>Profil {{ $animals['dname'] }}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<h2 style="text-align:center">User Profile Card</h2>
+<div class="jumbotron text-center">
 
-<div class="card">
-  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="John" style="width:100%">
-  <h1>{{ $animals['dname'] }}</h1>
-  <p class="title">{{ $animals['chip'] }}</p>
-  <p>{{ $animals['address'] }}</p>
-  <div style="margin: 24px 0;">
-    <a href="#"><i class="fa fa-dribbble"></i></a>
-    <a href="#"><i class="fa fa-twitter"></i></a>
-    <a href="#"><i class="fa fa-linkedin"></i></a>
-    <a href="#"><i class="fa fa-facebook"></i></a>
-  </div>
-  <p><button>Contact</button></p>
+  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="">
+
+</div>
+
+<div class="container">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Informacije</th>
+            <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Ime životinje</th>
+      <td>{{ $animals['dname'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Chip</th>
+      <td>{{ $animals['chip'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Starost</th>
+      <td>{{ $animals['age'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Adresa</th>
+      <td>{{ $animals['address'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Hirurška intervencija</th>
+      <td>{{ $animals['hirurg'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row">Težina</th>
+      <td>{{ $animals['tezina'] }}</td>
+    </tr>
+  </tbody>
+</table>
 </div>
 
 </body>
