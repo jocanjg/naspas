@@ -10,12 +10,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-
-<div class="jumbotron text-center">
-
-  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="100%">
-
+<div class="card">
+<img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="50%">
 </div>
+
 
 <div class="container">
   <table class="table">
