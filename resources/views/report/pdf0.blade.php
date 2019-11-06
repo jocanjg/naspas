@@ -13,8 +13,8 @@
 <div class="container">
   <div class="raw">
 
-  <div class="col-sm-6 float-right">
-  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="50%">
+  <div class="col-sm-3 float-right">
+  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="100%">
 
   </div>
 
