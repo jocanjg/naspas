@@ -10,12 +10,15 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-<div class="card">
-<img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="50%">
-</div>
-
-
 <div class="container">
+  <div class="raw">
+
+  <div class="col-sm-6 float-right">
+  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="50%">
+
+  </div>
+
+<div class="col-sm-6">
   <table class="table">
   <thead>
     <tr>
@@ -49,7 +52,10 @@
       <td>{{ $animals['tezina'] }}</td>
     </tr>
   </tbody>
-</table>
+  </table>
+</div>
+
+  </div>
 </div>
 
 </body>
