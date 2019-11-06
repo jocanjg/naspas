@@ -10,6 +10,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
 <body>
+  <style media="screen">
+    th {
+      background-color:#DCDCDC;
+    }
+  </style>
 <div class="container">
   <div class="raw">
 
@@ -22,33 +27,33 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col">Informacije</th>
-            <th scope="col"></th>
+      <th scope="col" style="background-color:green; color:white;">Informacije</th>
+            <th scope="col" style="background-color:green; color:white;"></th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">Ime životinje</th>
+      <th scope="row" style="background-color:#DCDCDC;">Ime životinje</th>
       <td>{{ $animals['dname'] }}</td>
     </tr>
     <tr>
-      <th scope="row">Chip</th>
+      <th scope="row" >Chip</th>
       <td>{{ $animals['chip'] }}</td>
     </tr>
     <tr>
-      <th scope="row">Starost</th>
+      <th scope="row" >Starost</th>
       <td>{{ $animals['age'] }}</td>
     </tr>
     <tr>
-      <th scope="row">Adresa</th>
+      <th scope="row" >Adresa</th>
       <td>{{ $animals['address'] }}</td>
     </tr>
     <tr>
-      <th scope="row">Hirurška intervencija</th>
+      <th scope="row" >Hirurška intervencija</th>
       <td>{{ $animals['hirurg'] }}</td>
     </tr>
     <tr>
-      <th scope="row">Težina</th>
+      <th scope="row" >Težina</th>
       <td>{{ $animals['tezina'] }}</td>
     </tr>
   </tbody>
