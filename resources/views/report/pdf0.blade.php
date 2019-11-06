@@ -13,7 +13,7 @@
 
 <div class="jumbotron text-center">
 
-  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="">
+  <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="100%">
 
 </div>
 
