@@ -84,7 +84,6 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{route('animals.update', ['id' => $animal->id])}}" enctype="multipart/form-data">
                       <input type="hidden" name="_method" value="PATCH">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                      
                       <div class="col-md-6" ><img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
                         <!-- Button trigger modal -->
                       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
