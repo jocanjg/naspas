@@ -84,14 +84,36 @@
                     <form class="form-horizontal" role="form" method="POST" action="{{route('animals.update', ['id' => $animal->id])}}" enctype="multipart/form-data">
                       <input type="hidden" name="_method" value="PATCH">
                       <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                      <div class="form-group col-md-5">
+                          <label class="col-md-4 control-label">Status</label>
+                          <div class="col-md-8">
+                            @if($animal->vfirstname)
+                            <h3>UDOMLJEN</h3>
+                              <select class="form-control" name="status_id" required style="display:none;">
+                                <option value="-1">Izaberi</option>
+                                @foreach ($statuses as $status)
+                                      <option {{$animal->status_id == $status->id ? 'selected' : ''}} value="{{$status->id}}">{{$status->name}}</option>
+                                  @endforeach
+                              </select>
+                              @else
+                              <select class="form-control" name="status_id" required >
+                                <option value="-1">U Prihvatilištu</option>
+                                @foreach ($statuses as $status)
+                                      <option {{$animal->status_id == $status->id ? 'selected' : ''}} value="{{$status->id}}">{{$status->name}}</option>
+                                  @endforeach
+                              </select>
+                              @endif
+                          </div>
+                      </div>
                       <div class="col-md-6" ><img  src="{{ asset('storage/'.$animal->picture) }}" class="img-fluid" style="width:100%; height:100%;"/>
                         <!-- Button trigger modal -->
                       <button type="button" class="btn btn-default" data-toggle="modal" data-target="#exampleModal">
                       Pogledaj sliku
                       </button>
+
                       <div class="form-group{{ $errors->has('udomljen') ? ' has-error' : '' }} col-md-6">
 
-                          <div class="col-md-3">
+                          <!-- <div class="col-md-3">
 
                                   @if($animal->vfirstname)
                             <i class="fa fa-circle-o text-green">   Udomljen</i>
@@ -100,7 +122,7 @@
                                 @endif
 
 
-                          </div>
+                          </div> -->
                       </div>
                       <!-- Modal -->
                       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

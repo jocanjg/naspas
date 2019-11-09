@@ -11,6 +11,7 @@ use App\Nacin;
 use App\User;
 use App\Box;
 use App\Sort;
+use App\Status;
 use Session;
 use Auth;
 use PDF;
@@ -80,8 +81,9 @@ public function __construct()
       $nacins = Nacin::all();
       $reasons = Reason::all();
       $locations = Location::all();
+      $statuses = Status::all();
         // return view('animals.create')->with('locations', $locations);
-        return view('animals/create', ['locations' => $locations, 'reasons'=>$reasons, 'nacins' => $nacins,'boxes' => $boxes, 'sorts' =>$sorts]);
+        return view('animals/create', ['locations' => $locations, 'reasons'=>$reasons, 'nacins' => $nacins,'boxes' => $boxes, 'sorts' =>$sorts, 'statuses' => $statuses]);
     }
 
     public function adopted()
@@ -105,7 +107,7 @@ public function __construct()
         $this->validateInput($request);
         // Upload image
         $path = $request->file('picture')->store('avatars');
-        $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text', 'sort','size','box','gender','hirurg','tezina','datein'];
+        $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text', 'sort','size','box','gender','hirurg','tezina','datein','status_id'];
         $input = $this->createQueryInput($keys, $request);
         $input['picture'] = $path;
         // Not implement yet
@@ -141,9 +143,10 @@ public function __construct()
       $sorts = Sort::all();
       $locations = Location::all();
       $reasons = Reason::all();
+      $statuses = Status::all();
 
 
-      return view('animals/edit', ['animal' => $animal,'locations' => $locations, 'reasons'=>$reasons, 'nacins' => $nacins, 'sorts' => $sorts, 'boxes' => $boxes]);
+      return view('animals/edit', ['animal' => $animal,'locations' => $locations, 'reasons'=>$reasons, 'nacins' => $nacins, 'sorts' => $sorts, 'boxes' => $boxes, 'statuses' => $statuses]);
     }
 
     /**
@@ -158,7 +161,7 @@ public function __construct()
       $animals = Animal::findOrFail($id);
       $this->validateInput($request);
       // Upload image
-      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'text','sort','size', 'box', 'gender', 'hirurg', 'tezina', 'datein', 'vfirstname', 'vlastname', 'vaddress', 'idcard', 'tel','udomljen'];
+      $keys = ['pname', 'dname',  'address', 'location_id', 'chip', 'age', 'date', 'reason_id', 'nacin_id', 'status_id', 'text','sort','size', 'box', 'gender', 'hirurg', 'tezina', 'datein', 'vfirstname', 'vlastname', 'vaddress', 'idcard', 'tel','udomljen'];
       $input = $this->createQueryInput($keys, $request);
         if ($request->file('picture')) {
           $path = $request->file('picture')->store('avatars');

@@ -29,6 +29,7 @@ Route::resource('users','UserController')->middleware('auth');
 Route::get('/','AnimalController@dashboard')->middleware('auth');
 Route::resource('locations','LocationsController')->middleware('auth');
 Route::resource('reasons','ReasonController')->middleware('auth');
+Route::resource('statuses','StatusController')->middleware('auth');
 Route::resource('catch','CatchController')->middleware('auth');
 Route::resource('sorts','SortController')->middleware('auth');
 Route::post('animals/search', 'AnimalController@search')->name('animals.search');
