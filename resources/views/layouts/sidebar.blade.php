@@ -47,7 +47,7 @@
           <li><a href="{{ url('reasons')}}"><i class="fa fa-question"></i>Razlog hvatanja</a></li>
           <li><a href="{{ url('locations')}}"><i class="fa fa-location-arrow"></i>Lokacija</a></li>
           <li><a href="{{ url('sorts')}}"><i class="fa fa-paw"></i>Vrste / Rase</a></li>
-          <li><a href="{{ url('statuses')}}"><i class="fa fa-paw"></i>Status</a></li>
+          <li><a href="{{ url('statuses')}}"><i class="fa fa-home"></i>Status</a></li>
           <li><a href="{{ url('reports')}}"><i class="fa fa-file"></i>Izveštaji</a></li>
         </ul>
       </li>
