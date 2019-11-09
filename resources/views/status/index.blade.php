@@ -34,7 +34,7 @@
               </tr>
             </thead>
             @if(count($statuses) > 0)
-             @foreach($status as $status)
+             @foreach($statuses as $status)
             <tbody>
 
                 <tr role="row" class="odd">
