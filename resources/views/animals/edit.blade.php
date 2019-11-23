@@ -65,7 +65,7 @@
           <strong><i class="fa fa-book margin-r-5"></i> Status</strong>
 
           <p class="text-muted">
-            @if($animal->status_id == null)
+            @if($animal->status_id == 0)
             U Prihvatilištu
             @endif
             @if($animal->status_id == 1)
