@@ -68,6 +68,7 @@
       <td>Srednji</td>
       @else
       <td>Veliki</td>
+      @endif
     </tr>
 
   </tbody>
