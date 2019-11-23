@@ -43,10 +43,13 @@
         <!-- About Me Box -->
         <!-- /.box -->
       </div>
+
+
+
+
+
       <div class="col-md-3">
-
-
-      <div class="box box-primary">
+      <div class="box box-info">
         <div class="box-header with-border">
           <h3 class="box-title">Info</h3>
         </div>
@@ -77,28 +80,56 @@
           </p>
 
           <hr>
-  @if(!empty($animal->vfirstname))
-          <strong> Lokacija</strong>
 
-          <p class="text-muted">{{ $animal->vaddress }}</p>
+          <strong> Chip</strong>
 
+          <p class="text-muted">{{ $animal->chip }}</p>
 
-          <strong>Ime vlasnika</strong>
-
-          <p class="text-muted">{{ $animal->vfirstname }}</p>
-
-
-          <strong>Prezime</strong>
-
-          <p class="text-muted">{{ $animal->vlastname }}</p>
-
-@endif
 
 
         </div>
         <!-- /.box-body -->
       </div>
         </div>
+
+
+
+        <div class="col-md-3">
+          @if(!empty($animal->vfirstname))
+          <div class="box box-success">
+            <div class="box-header with-border">
+              <h3 class="box-title">Podaci o vlasniku</h3>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body">
+
+        @if(!empty($animal->vfirstname))
+              <strong> Lokacija</strong>
+
+              <p class="text-muted">{{ $animal->vaddress }}</p>
+
+              <strong> Telefon</strong>
+
+              <p class="text-muted">{{ $animal->tel }}</p>
+
+              <strong>Ime vlasnika</strong>
+
+              <p class="text-muted">{{ $animal->vfirstname }}</p>
+
+
+              <strong>Prezime</strong>
+
+              <p class="text-muted">{{ $animal->vlastname }}</p>
+
+        @endif
+
+
+            </div>
+            <!-- /.box-body -->
+          </div>
+          @endif
+
+      </div>
 
 @endcan
 
