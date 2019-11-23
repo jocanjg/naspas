@@ -62,7 +62,7 @@ public function __construct()
       $animals = DB::table('animals')->orderByRaw('id DESC')
       ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id')
-      ->paginate(5);
+      ->paginate(10);
       $capacitet = 200;
       $rez= ($count * 100) / $capacitet;
       return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen]);

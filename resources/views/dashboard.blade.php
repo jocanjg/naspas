@@ -149,6 +149,60 @@ desired effect
            </form>
          </div>
         </div>
+
+        <div class="col-lg-6">
+          <div class="box box-info">
+              <div class="box-header with-border">
+                <h3 class="box-title">Poslednje</h3>
+
+                <div class="box-tools pull-right">
+                  <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                  </button>
+                  <!-- <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button> -->
+                </div>
+              </div>
+              <!-- /.box-header -->
+              <div class="box-body">
+                <div class="table-responsive">
+                  <table class="table no-margin">
+                    <thead>
+                    <tr>
+                      <th>Čip</th>
+                      <th>Starost</th>
+                      <th>Lokacija</th>
+                      <th>Ime životinje</th>
+            
+                    </tr>
+                    </thead>
+                    <tbody>
+                          @foreach ($animals as $animal)
+                    <tr>
+                      <td><a href="{{ route('animals.edit', ['id' => $animal->id]) }}">{{ $animal->chip}}</a></td>
+
+                      <td><span class="label label-success">{{ $animal->age }}</span></td>
+                      <td>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">{{ $animal->address }}</div>
+                      </td>
+                      <td>
+                        <div class="sparkbar" data-color="#00a65a" data-height="20">{{ $animal->dname }}</div>
+                      </td>
+
+                    </tr>
+                  @endforeach
+                    </tbody>
+                  </table>
+                </div>
+                <!-- /.table-responsive -->
+              </div>
+              <!-- /.box-body -->
+              <div class="box-footer clearfix">
+
+                <a href="{{ url('animals') }}" class="btn btn-sm btn-default btn-flat pull-right">Pogledaj sve</a>
+              </div>
+              <!-- /.box-footer -->
+            </div>
+
+        </div>
       </div>
 
 
@@ -288,7 +342,7 @@ desired effect
 
                 <div class="info-box-content">
                   <a href="{{ url('udomljen') }}"><span class="info-box-text">Udomljeno</span>
-                  <span class="info-box-number">{{ $udomljen }}</span></a> 
+                  <span class="info-box-number">{{ $udomljen }}</span></a>
                 </div>
                 <!-- /.info-box-content -->
               </div>
