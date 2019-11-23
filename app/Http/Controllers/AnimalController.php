@@ -56,6 +56,7 @@ public function __construct()
     public function dashboard(){
 
       $udomljen = DB::table('animals')->whereRaw('vfirstname <> ""')->get()->count();
+      $cnvr = DB::table('animals')->whereRaw('status_id = 1')->get()->count();
       $count = DB::table('animals')->count();
       $cusers = DB::table('users')->count();
       $users = User::paginate(5);
@@ -65,7 +66,7 @@ public function __construct()
       ->paginate(10);
       $capacitet = 200;
       $rez= ($count * 100) / $capacitet;
-      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen]);
+      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen, 'cnvr' =>$cnvr]);
 
     }
 
@@ -73,6 +74,11 @@ public function __construct()
     {
       $udomljeni = DB::table('animals')->whereRaw('vfirstname <> ""')->get();
       return view('animals.adopted', ['udomljeni' => $udomljeni]);
+    }
+    public function cnvr()
+    {
+      $pusteni = DB::table('animals')->whereRaw('status_id = 1')->get();
+      return view('animals.cnvr', ['pusteni' => $pusteni]);
     }
 
     /**

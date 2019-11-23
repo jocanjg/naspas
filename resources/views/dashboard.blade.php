@@ -297,6 +297,18 @@ desired effect
               </div>
               <!-- /.info-box -->
             </div>
+            <div class="col-md-3 col-sm-6 col-xs-12">
+              <div class="info-box">
+                <span class="info-box-icon bg-gray"><i class="fa fa-home"></i></span>
+
+                <div class="info-box-content">
+                  <a href="{{ url('pusten') }}"><span class="info-box-text">CNVR</span>
+                  <span class="info-box-number">{{ $cnvr }}</span></a>
+                </div>
+                <!-- /.info-box-content -->
+              </div>
+              <!-- /.info-box -->
+            </div>
             <!-- /.col -->
             @can('isAdmin')
             <div class="col-md-3 col-sm-6 col-xs-12">

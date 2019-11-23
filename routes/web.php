@@ -36,6 +36,7 @@ Route::post('animals/search', 'AnimalController@search')->name('animals.search')
 Route::resource('animals','AnimalController')->middleware('auth');
 Route::resource('nacin','NacinController')->middleware('auth');
 Route::get('udomljen','AnimalController@udomljen')->middleware('auth');
+Route::get('pusten','AnimalController@cnvr')->middleware('auth');
 Route::resource('box','BoxController')->middleware('auth');
 Route::resource('reports','ReportController')->middleware('auth');
 Route::post('animals/report/pdf', 'ReportController@exportPDF')->name('report.pdf');
