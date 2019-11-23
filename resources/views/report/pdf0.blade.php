@@ -23,7 +23,7 @@
 
     <h4>Opis</h4>
     <p>{{ $animals['text'] }}</p>
-  
+
 
   </div>
 
@@ -58,11 +58,16 @@
     </tr>
     <tr>
       <th scope="row" >Težina</th>
-      <td>{{ $animals['tezina'] }}</td>
+      <td>{{ $animals['tezina'] }} kg</td>
     </tr>
     <tr>
       <th scope="row" >Velicina</th>
-      <td>{{ $animals['size'] }}</td>
+      @if($animals['size'] == 1)
+      <td>Mali</td>
+      @elseif($animals['size'] == 2)
+      <td>Srednji</td>
+      @else
+      <td>Veliki</td>
     </tr>
 
   </tbody>
