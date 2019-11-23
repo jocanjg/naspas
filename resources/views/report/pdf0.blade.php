@@ -20,6 +20,10 @@
 
   <div class="col-sm-5 float-right">
   <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="100%">
+  <tr>
+    <h4>Opis</h4>
+    <p>{{ $animals['text'] }}</p>
+  </tr>
 
   </div>
 
@@ -27,8 +31,8 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col" style="background-color:green; color:white;">Informacije</th>
-            <th scope="col" style="background-color:green; color:white;"></th>
+      <th scope="col" style="background-color:#605ca8; color:white;">Informacije o životinji</th>
+            <th scope="col" style="background-color:#605ca8; color:white;"></th>
     </tr>
   </thead>
   <tbody>
@@ -42,7 +46,7 @@
     </tr>
     <tr>
       <th scope="row" >Starost</th>
-      <td>{{ $animals['age'] }}</td>
+      <td>{{ $animals['age'] }} god</td>
     </tr>
     <tr>
       <th scope="row" >Adresa</th>
@@ -60,10 +64,6 @@
       <th scope="row" >Velicina</th>
       <td>{{ $animals['size'] }}</td>
     </tr>
-    <tr>
-      <th scope="row" >Opis</th>
-      <td>{{ $animals['text'] }}</td>
-    </tr>
 
   </tbody>
   </table>
@@ -73,8 +73,8 @@
   <table class="table">
   <thead>
     <tr>
-      <th scope="col" style="background-color:green; color:white;">Informacije o vlasniku</th>
-            <th scope="col" style="background-color:purple; color:white;"></th>
+      <th scope="col" style="background-color:#605ca8; color:white;">Informacije o vlasniku</th>
+            <th scope="col" style="background-color:#605ca8; color:white;"></th>
     </tr>
   </thead>
   <tbody>
