@@ -62,6 +62,9 @@
           <strong><i class="fa fa-book margin-r-5"></i> Status</strong>
 
           <p class="text-muted">
+            @if($animal->status_id == null)
+            U Prihvatilištu
+            @endif
             @if($animal->status_id == 1)
             CNVR
             @endif
