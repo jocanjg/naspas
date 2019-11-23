@@ -69,6 +69,12 @@ public function __construct()
 
     }
 
+    public function udomljen()
+    {
+      $udomljeni = DB::table('animals')->whereRaw('vfirstname <> ""')->get();
+      return view('animals.adopted', ['udomljeni' => $udomljeni]);
+    }
+
     /**
      * Show the form for creating a new resource.
      *

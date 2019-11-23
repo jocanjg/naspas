@@ -287,8 +287,8 @@ desired effect
                 <span class="info-box-icon bg-gray"><i class="fa fa-home"></i></span>
 
                 <div class="info-box-content">
-                  <span class="info-box-text">Udomljeno</span>
-                  <span class="info-box-number">{{ $udomljen }}</span>
+                  <a href="{{ url('udomljen') }}"><span class="info-box-text">Udomljeno</span>
+                  <span class="info-box-number">{{ $udomljen }}</span></a> 
                 </div>
                 <!-- /.info-box-content -->
               </div>
