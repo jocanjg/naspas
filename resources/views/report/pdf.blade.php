@@ -29,7 +29,7 @@
             <thead>
               <tr role="row">
                 <th width="15%">Ime Životinje</th>
-                <th width="20%">Čip</th>
+                <th width="20%">Chip</th>
                 <th width="10%">Starost</th>
                 <th width="15%">Lokacija</th>
                 <th width="15%">Hir. intervencija</th>
