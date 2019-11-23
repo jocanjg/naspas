@@ -64,20 +64,22 @@
           <hr>
           <strong><i class="fa fa-book margin-r-5"></i> Status</strong>
 
-          <p class="text-muted">
-            @if(empty($animal->status_id))
-            U Prihvatilištu
-            @endif
-            @if($animal->status_id == 1)
-            CNVR
-            @endif
-            @if($animal->status_id == 2)
-            Uginuće
-            @endif
-            @if(!empty($animal->vfirstname))
-            UDOMLJEN
-            @endif
-          </p>
+
+
+          <select class="form-control" name="status_id">
+            <option value="-1">U prihvatilistu</option>
+              @foreach ($statuses as $status)
+                    <option {{$animal->status_id == $status->id ? 'selected' : ''}} value="{{$status->id}}">{{$status->name}}</option>
+                @endforeach
+          </select>
+
+
+
+
+
+
+
+
 
           <hr>
 
