@@ -28,7 +28,7 @@
        <table id="example2" role="grid">
             <thead>
               <tr role="row">
-                <th width="15%">Ime Korsinika</th>
+                <th width="15%">Ime Životinje</th>
                 <th width="20%">Čip</th>
                 <th width="10%">Starost</th>
                 <th width="15%">Lokacija</th>
@@ -39,7 +39,7 @@
             <tbody>
             @foreach ($animals as $animal)
                 <tr role="row" class="odd">
-                  <td>{{ $animal['pname'] }} </td>
+                  <td>{{ $animal['dname'] }} </td>
                   <td>{{ $animal['chip'] }}</td>
                   <td>{{ $animal['age'] }}</td>
                   <td>{{ $animal['address'] }}</td>
