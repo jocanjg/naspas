@@ -59,12 +59,37 @@
           </p>
 
           <hr>
+          <strong><i class="fa fa-book margin-r-5"></i> Status</strong>
 
-          <strong><i class="fa fa-map-marker margin-r-5"></i> Lokacija</strong>
-
-          <p class="text-muted">{{ $animal->address }}</p>
+          <p class="text-muted">
+            @if($animal->status_id == 1)
+            CNVR
+            @endif
+            @if($animal->status_id == 2)
+            Uginuće
+            @endif
+            @if(!empty($animal->vfirstname))
+            UDOMLJEN
+            @endif
+          </p>
 
           <hr>
+  @if(!empty($animal->vfirstname))
+          <strong> Lokacija</strong>
+
+          <p class="text-muted">{{ $animal->vaddress }}</p>
+
+
+          <strong>Ime vlasnika</strong>
+
+          <p class="text-muted">{{ $animal->vfirstname }}</p>
+
+
+          <strong>Prezime</strong>
+
+          <p class="text-muted">{{ $animal->vlastname }}</p>
+
+@endif
 
 
         </div>
