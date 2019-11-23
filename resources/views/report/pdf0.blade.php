@@ -18,7 +18,7 @@
 <div class="container">
   <div class="raw">
 
-  <div class="col-sm-3 float-right">
+  <div class="col-sm-5 float-right">
   <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="100%">
 
   </div>
@@ -55,6 +55,44 @@
     <tr>
       <th scope="row" >Težina</th>
       <td>{{ $animals['tezina'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row" >Velicina</th>
+      <td>{{ $animals['size'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row" >Opis</th>
+      <td>{{ $animals['text'] }}</td>
+    </tr>
+
+  </tbody>
+  </table>
+</div>
+
+<div class="col-sm-6">
+  <table class="table">
+  <thead>
+    <tr>
+      <th scope="col" style="background-color:green; color:white;">Informacije o vlasniku</th>
+            <th scope="col" style="background-color:purple; color:white;"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row" style="background-color:#DCDCDC;">Ime</th>
+      <td>{{ $animals['vfirstname'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row" >Prezime</th>
+      <td>{{ $animals['vlastname'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row" >Adresa</th>
+      <td>{{ $animals['vaddress'] }}</td>
+    </tr>
+    <tr>
+      <th scope="row" >Telefon</th>
+      <td>{{ $animals['tel'] }}</td>
     </tr>
   </tbody>
   </table>
