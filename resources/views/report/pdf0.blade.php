@@ -20,10 +20,10 @@
 
   <div class="col-sm-5 float-right">
   <img src="{{ asset('storage/'.$animals['picture']) }}" alt="" width="100%">
-  <tr>
+
     <h4>Opis</h4>
     <p>{{ $animals['text'] }}</p>
-  </tr>
+  
 
   </div>
 
