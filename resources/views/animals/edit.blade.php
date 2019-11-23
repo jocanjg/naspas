@@ -71,6 +71,11 @@
                     <option {{$animal->status_id == $status->id ? 'selected' : ''}} value="{{$status->id}}">{{$status->name}}</option>
                 @endforeach
           </select>
+          <hr>
+          <strong> Adresa</strong>
+
+          <p class="text-muted">{{ $animal->address }}</p>
+
           @endif
 
           <hr>
