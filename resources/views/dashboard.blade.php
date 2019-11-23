@@ -286,27 +286,27 @@ desired effect
             <div class="clearfix visible-sm-block"></div>
 
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
+            <a href="{{ url('udomljen') }}">  <div class="info-box">
                 <span class="info-box-icon bg-gray"><i class="fa fa-home"></i></span>
 
                 <div class="info-box-content">
-                  <a href="{{ url('udomljen') }}"><span class="info-box-text">Udomljeno</span>
-                  <span class="info-box-number">{{ $udomljen }}</span></a>
+                  <span class="info-box-text">Udomljeno</span>
+                  <span class="info-box-number">{{ $udomljen }}</span>
                 </div>
                 <!-- /.info-box-content -->
-              </div>
+              </div></a>
               <!-- /.info-box -->
             </div>
             <div class="col-md-3 col-sm-6 col-xs-12">
-              <div class="info-box">
-                <span class="info-box-icon bg-gray"><i class="fa fa-home"></i></span>
+            <a href="{{ url('pusten') }}">  <div class="info-box">
+                <span class="info-box-icon bg-gray"><i class="fa fa-check"></i></span>
 
                 <div class="info-box-content">
-                  <a href="{{ url('pusten') }}"><span class="info-box-text">CNVR</span>
-                  <span class="info-box-number">{{ $cnvr }}</span></a>
+                  <span class="info-box-text">CNVR</span>
+                  <span class="info-box-number">{{ $cnvr }}</span>
                 </div>
                 <!-- /.info-box-content -->
-              </div>
+              </div></a>
               <!-- /.info-box -->
             </div>
             <!-- /.col -->

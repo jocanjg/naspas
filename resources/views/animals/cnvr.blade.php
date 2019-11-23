@@ -6,7 +6,7 @@
 <div class="row">
 
     <div class="col-sm-4">
-      <h3 class="box-title">Lista udomljenih životinja</h3>
+      <h3 class="box-title">Lista životinja vraćenih na teren</h3>
       <p>Pretraži bazu pomoću čipa</p>
       <!-- <li>U slučaju da ne postoji traženi pas ili mačka, kontktiraj lokalno prihvatilište ili azil</li> -->
 
@@ -58,11 +58,10 @@
           <tr role="row">
             <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Slika</th>
           <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime životinje</th>
-            <th width="12%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Ime vlasnika</th>
-            <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending">Prezime</th>
+
             <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Adresa</th>
             <!-- <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="HiredDate: activate to sort column ascending">Hired Date</th> -->
-            <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Telefon</th>
+            <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Starost</th>
             <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Chip</th>
             <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Opcije</th>
           </tr>
@@ -73,10 +72,9 @@
             <tr role="row" class="odd">
               <td><img src="{{ asset('storage/'.$pusten->picture) }}" width="50px" height="50px"/></td>
               <td class="hidden-xs">{{ $pusten->dname }}</td>
-              <td class="sorting_1">{{ $pusten->vfirstname }}</td>
-              <td class="hidden-xs">{{ $pusten->vlastname }}</td>
-              <td class="hidden-xs">{{ $pusten->vaddress }}</td>
-              <td class="hidden-xs">{{ $pusten->tel }}</td>
+
+              <td class="hidden-xs">{{ $pusten->address }}</td>
+              <td class="hidden-xs">{{ $pusten->age }}</td>
               <td class="hidden-xs">{{ $pusten->chip }}</td>
 
               <td>
@@ -95,11 +93,10 @@
           <tr>
             <th width="8%" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Picture: activate to sort column descending">Slika</th>
             <th width="10%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Name: activate to sort column descending">Ime životinje</th>
-            <th width="12%" class="sorting_asc" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Address: activate to sort column ascending">Ime vlasnika</th>
-            <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Birthdate: activate to sort column ascending">Prezime</th>
+
             <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Age: activate to sort column ascending">Adresa</th>
             <!-- <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="HiredDate: activate to sort column ascending">Hired Date</th> -->
-            <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Telefon</th>
+            <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Department: activate to sort column ascending">Starost</th>
             <th width="8%" class="sorting hidden-xs" tabindex="0" aria-controls="example2" rowspan="1" colspan="1" aria-label="Division: activate to sort column ascending">Chip</th>
             <th tabindex="0" aria-controls="example2" rowspan="1" colspan="2" aria-label="Action: activate to sort column ascending">Opcije</th>
 
