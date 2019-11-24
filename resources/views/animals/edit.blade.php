@@ -198,7 +198,7 @@
                               </select>
                               @else
                               <select class="form-control" name="status_id" required >
-                                <option value="-1">U Prihvatilištu</option>
+                                <option value="0">U Prihvatilištu</option>
                                 @foreach ($statuses as $status)
                                       <option {{$animal->status_id == $status->id ? 'selected' : ''}} value="{{$status->id}}">{{$status->name}}</option>
                                   @endforeach
