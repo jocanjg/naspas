@@ -587,92 +587,115 @@
                                       <span aria-hidden="true">&times;</span>
                                     </button>
                                   </div>
-                                  <div class="modal-body" class="width:20%;">
-                                    <div class="form-group{{ $errors->has('vfirstname') ? ' has-error' : '' }} col-md-5">
-                                        <label for="vfirstname" class="col-md-4 control-label">Ime</label>
+                                  <div class="modal-body" class="width:40%;">
+                                    <div class="box-body">
 
-                                        <div class="col-md-12">
-                                            <input id="vfirstname" type="text" class="form-control" name="vfirstname" value="{{ $animal->vfirstname }}" >
 
-                                            @if ($errors->has('vfirstname'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('vfirstname') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
+                                    <div class="form-group">
+                                      <label>Opis problema</label>
+                                      <input type="text" class="form-control" placeholder="">
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Kada se problem javio</label>
+                                      <input type="text" class="form-control" placeholder="">
                                     </div>
 
-                                    <div class="form-group{{ $errors->has('vlastname') ? ' has-error' : '' }} col-md-5">
-                                        <label for="vlastname" class="col-md-4 control-label">Prezime</label>
-
-                                        <div class="col-md-12">
-                                            <input id="vlastname" type="text" class="form-control" name="vlastname" value="{{ $animal->vlastname }}">
-
-                                            @if ($errors->has('vlastname'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('vlastname') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
+                                    <!-- textarea -->
+                                    <div class="form-group">
+                                      <label>Detaljniji opis</label>
+                                      <textarea class="form-control" rows="3" placeholder="Da li postoji gubitak dlake, promene boje dlake i koze ... "></textarea>
                                     </div>
 
-                                    <!-- <div class="form-group col-md-5">
-                                        <label for="avatar" class="col-md-4 control-label" >Picture</label>
-                                        <div class="col-md-6">
-                                            <input type="file" id="picture" name="picture" required >
-                                        </div>
-                                    </div> -->
-
-
-
-
-
-                                    <div class="form-group{{ $errors->has('vaddress') ? ' has-error' : '' }} col-md-8">
-                                        <label for="vaddress" class="col-md-4 control-label">Dijagnoza</label>
-
-                                        <div class="col-md-8">
-                                            <input id="vaddress" type="text" class="form-control" name="vaddress" value="{{ $animal->vaddress }}">
-
-                                            @if ($errors->has('vaddress'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('vaddress') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
+                                    <!-- input states -->
+                                    <div class="form-group has-success">
+                                      <label class="control-label" for="inputSuccess"><i class="fa fa-check"></i> Dijagnoza</label>
+                                      <input type="text" class="form-control" id="inputSuccess" placeholder="Enter ...">
+                                      <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group has-warning">
+                                      <label class="control-label" for="inputWarning"><i class="fa fa-bell-o"></i> Anamneza</label>
+                                      <input type="text" class="form-control" id="inputWarning" placeholder="Enter ...">
+                                      <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group has-error">
+                                      <label class="control-label" for="inputError"><i class="fa fa-times-circle-o"></i> Ektoparazit</label>
+                                      <input type="text" class="form-control" id="inputError" placeholder="Enter ...">
+                                      <span class="help-block"></span>
+                                    </div>
+                                    <div class="form-group">
+                                      <label>Intervencija</label>
+                                      <textarea class="form-control" rows="3" placeholder="Dati medicinski preparati... "></textarea>
                                     </div>
 
+                                    <!-- checkbox -->
+                                    <div class="form-group">
+                                      <label>Životinja se:</label>
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox">
+                                          Češe
+                                        </label>
+                                      </div>
+
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox">
+                                          Grize
+                                        </label>
+                                      </div>
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox">
+                                          Liže
+                                        </label>
+                                      </div>
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox">
+                                          Češe lice
+                                        </label>
+                                      </div>
+                                      <div class="checkbox">
+                                        <label>
+                                          <input type="checkbox">
+                                          Grize šape
+                                        </label>
+                                      </div>
 
 
-
-
-                                    <div class="form-group{{ $errors->has('idcard') ? ' has-error' : '' }} col-md-8">
-                                        <label for="idcard" class="col-md-4 control-label">Lečenje</label>
-
-                                        <div class="col-md-8">
-                                            <input id="idcard" type="text" class="form-control" name="idcard" value="{{ $animal->idcard }}" >
-
-                                            @if ($errors->has('idcard'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('idcard') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
                                     </div>
-                                    <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }} col-md-8">
-                                        <label for="tel" class="col-md-4 control-label">Datum</label>
 
-                                        <div class="col-md-8">
-                                            <input id="tel" type="text" class="form-control" name="tel" value="{{ $animal->tel }}">
+                                    <!-- radio -->
+                                    <div class="form-group">
+                                      <div class="radio">
+                                        <label>
+                                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                                          Počelo je naglo
+                                        </label>
+                                      </div>
+                                      <div class="radio">
+                                        <label>
+                                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
+                                          Počelo je postepeno
+                                        </label>
+                                      </div>
 
-                                            @if ($errors->has('tel'))
-                                                <span class="help-block">
-                                                    <strong>{{ $errors->first('tel') }}</strong>
-                                                </span>
-                                            @endif
-                                        </div>
+                                    </div>
+
+                                    <!-- select -->
+                                    <div class="form-group">
+                                      <label>Javlja se</label>
+                                      <select class="form-control">
+                                        <option>Danju</option>
+                                        <option>Noću</option>
+                                        <option>Unutra</option>
+                                        <option>Napolju</option>
+                                      
+                                      </select>
                                     </div>
 
                                   </div>
+                                </div>
                                   <div class="modal-footer">
                                     <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button> -->
 
