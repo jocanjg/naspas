@@ -397,11 +397,11 @@
                             <label class="col-md-4 control-label">Pol</label>
                             <div class="col-md-6">
                                 <select class="form-control" name="gender">
-                                  @if($animal->gender == 1)
-                                  <option value="1">Mužijak</option>
-                                  @else
-                                  <option value="2">Ženka</option>
-                                  @endif
+
+                                  <option {{$animal->gender == 1 ? 'selected' : ''}} value="1">Mužijak</option>
+
+                                  <option {{$animal->gender == 2 ? 'selected' : ''}} value="2">Ženka</option>
+
                                 </select>
 
                             </div>
@@ -690,7 +690,7 @@
                                         <option>Noću</option>
                                         <option>Unutra</option>
                                         <option>Napolju</option>
-                                      
+
                                       </select>
                                     </div>
 
