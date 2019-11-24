@@ -177,7 +177,7 @@ desired effect
                 <tr>
                   <th>Čip</th>
                   <th>Starost</th>
-                  <th>Ime osobe</th>
+                  <th>Status</th>
                   <th>Ime životinje</th>
                   <th>Datum</th>
                 </tr>
@@ -189,7 +189,17 @@ desired effect
 
                   <td><span class="label label-success">{{ $animal->age }}</span></td>
                   <td>
-                    <div class="sparkbar" data-color="#00a65a" data-height="20">{{ $animal->pname }}</div>
+                    <div class="sparkbar" data-color="#00a65a" data-height="20">
+                      @if($animal->status_id == 0)
+                      U prihvatilištu
+                      @elseif($animal->status_id == 1)
+                      CNVR
+                      @elseif($animal->status_id == 2)
+                      Uginulo
+                      @elseif(!empty($animal->vfirstname))
+                      Udomljeno
+                      @endif
+                    </div>
                   </td>
                   <td>
                     <div class="sparkbar" data-color="#00a65a" data-height="20">{{ $animal->dname }}</div>
