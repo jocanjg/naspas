@@ -468,6 +468,10 @@
                               <!-- <span class="badge bg-purple">Udomljen</span> -->
                               <i class="fa fa-users" ></i> Udomljen
                             </a>
+                            <a class="btn btn-app" data-toggle="modal" data-target="#exampleModal3">
+                              <!-- <span class="badge bg-purple">Udomljen</span> -->
+                              <i class="fa fa-ambulance" ></i> Veterinar
+                            </a>
 
                             <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
                               <div class="modal-dialog" role="document">
@@ -571,6 +575,114 @@
                                 </div>
                               </div>
                             </div>
+
+
+
+                            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModal2Label" aria-hidden="true">
+                              <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                  <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModal3Label">Veterinar</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                      <span aria-hidden="true">&times;</span>
+                                    </button>
+                                  </div>
+                                  <div class="modal-body" class="width:20%;">
+                                    <div class="form-group{{ $errors->has('vfirstname') ? ' has-error' : '' }} col-md-5">
+                                        <label for="vfirstname" class="col-md-4 control-label">Ime</label>
+
+                                        <div class="col-md-12">
+                                            <input id="vfirstname" type="text" class="form-control" name="vfirstname" value="{{ $animal->vfirstname }}" >
+
+                                            @if ($errors->has('vfirstname'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('vfirstname') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group{{ $errors->has('vlastname') ? ' has-error' : '' }} col-md-5">
+                                        <label for="vlastname" class="col-md-4 control-label">Prezime</label>
+
+                                        <div class="col-md-12">
+                                            <input id="vlastname" type="text" class="form-control" name="vlastname" value="{{ $animal->vlastname }}">
+
+                                            @if ($errors->has('vlastname'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('vlastname') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                    <!-- <div class="form-group col-md-5">
+                                        <label for="avatar" class="col-md-4 control-label" >Picture</label>
+                                        <div class="col-md-6">
+                                            <input type="file" id="picture" name="picture" required >
+                                        </div>
+                                    </div> -->
+
+
+
+
+
+                                    <div class="form-group{{ $errors->has('vaddress') ? ' has-error' : '' }} col-md-8">
+                                        <label for="vaddress" class="col-md-4 control-label">Dijagnoza</label>
+
+                                        <div class="col-md-8">
+                                            <input id="vaddress" type="text" class="form-control" name="vaddress" value="{{ $animal->vaddress }}">
+
+                                            @if ($errors->has('vaddress'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('vaddress') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                    <div class="form-group{{ $errors->has('idcard') ? ' has-error' : '' }} col-md-8">
+                                        <label for="idcard" class="col-md-4 control-label">Lečenje</label>
+
+                                        <div class="col-md-8">
+                                            <input id="idcard" type="text" class="form-control" name="idcard" value="{{ $animal->idcard }}" >
+
+                                            @if ($errors->has('idcard'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('idcard') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="form-group{{ $errors->has('tel') ? ' has-error' : '' }} col-md-8">
+                                        <label for="tel" class="col-md-4 control-label">Datum</label>
+
+                                        <div class="col-md-8">
+                                            <input id="tel" type="text" class="form-control" name="tel" value="{{ $animal->tel }}">
+
+                                            @if ($errors->has('tel'))
+                                                <span class="help-block">
+                                                    <strong>{{ $errors->first('tel') }}</strong>
+                                                </span>
+                                            @endif
+                                        </div>
+                                    </div>
+
+                                  </div>
+                                  <div class="modal-footer">
+                                    <!-- <button type="button" class="btn btn-secondary" data-dismiss="modal">Zatvori</button> -->
+
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+
+
+
 
 
                           </div>
