@@ -190,11 +190,11 @@ desired effect
                   <td><span class="label label-success">{{ $animal->age }}</span></td>
                   <td>
                     <div class="sparkbar" data-color="#00a65a" data-height="20">
-                      @if($animal->status_id == 0)
+                      @if($animal->status_id == 0 && empty($animal->vfirstname))
                       U prihvatilištu
-                      @elseif($animal->status_id == 1)
+                      @elseif($animal->status_id == 1 && empty($animal->vfirstname))
                       CNVR
-                      @elseif($animal->status_id == 2)
+                      @elseif($animal->status_id == 2 && empty($animal->vfirstname))
                       Uginulo
                       @elseif(!empty($animal->vfirstname))
                       Udomljeno

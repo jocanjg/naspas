@@ -95,7 +95,13 @@
                     Udomljeno
                     @endif
                   </td>
-                  <td class="hidden-xs">{{ $animal->address}}</td>
+                  <td class="hidden-xs">
+                    @if(!empty($animal->vaddress))
+                    {{ $animal->vaddress}}
+                    @else
+                    {{ $animal->address}}
+                    @endif
+                  </td>
                   <td>
                     <form class="row" method="POST" action="{{ route('animals.destroy', ['id' => $animal->id]) }}" onsubmit = "return confirm('Are you sure?')">
                         <input type="hidden" name="_method" value="DELETE">
