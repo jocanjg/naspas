@@ -251,6 +251,13 @@ public function __construct()
     // return view('system-mgmt/report/pdf', ['employees' => $employees, 'searchingVals' => $constraints]);
 }
 
+public function izvestajPDF(Request $request, $id) {
+  $animals = Animal::find($id);
+  $izvestaj = PDF::loadView('report/izvestaj', ['animals' => $animals, 'id' => $id]);
+  return $izvestaj->download('Profil.pdf');
+  // return view('system-mgmt/report/pdf', ['employees' => $employees, 'searchingVals' => $constraints]);
+}
+
 // private function getExportingData($id) {
 //     return DB::table('animals')
 //     ->select('animals.pname', 'animals.dname',

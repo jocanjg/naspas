@@ -459,14 +459,18 @@
 
 
 
-                          <div class="form-group col-md-3">
+                          <div class="form-group col-md-6">
                             <a class="btn btn-app" href="{{ route('animals.pdf', ['id' => $animal->id]) }}">
                               <i class="fa fa-save"></i>   Preuzmi PDF
                             </a>
 
+                            <a class="btn btn-app" href="{{ route('animals.izvestaj', ['id' => $animal->id]) }}">
+                              <i class="fa fa-home"></i>   Izveštaj za udomljene
+                            </a>
+
                             <a class="btn btn-app" data-toggle="modal" data-target="#exampleModal2">
                               <!-- <span class="badge bg-purple">Udomljen</span> -->
-                              <i class="fa fa-users" ></i> Udomljen
+                              <i class="fa fa-user" ></i> Udomljen
                             </a>
                             <a class="btn btn-app" data-toggle="modal" data-target="#exampleModal3">
                               <!-- <span class="badge bg-purple">Udomljen</span> -->

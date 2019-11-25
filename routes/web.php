@@ -42,6 +42,7 @@ Route::resource('reports','ReportController')->middleware('auth');
 Route::post('animals/report/pdf', 'ReportController@exportPDF')->name('report.pdf');
 Route::post('animals/report/search', 'ReportController@search')->name('report.search');
 Route::get('animals/{id}/pdf', ['uses' =>'AnimalController@exportPDF'])->name('animals.pdf');
+Route::get('animals/{id}/izvestaj', ['uses' =>'AnimalController@izvestajPDF'])->name('animals.izvestaj');
 
 
 
