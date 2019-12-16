@@ -87,6 +87,18 @@ desired effect
 
       <ul class="list-group list-group-unbordered">
         <li class="list-group-item">
+          <b>Status</b> <a class="pull-right">
+            @if($animal->status_id == 0 && empty($animal->vfirstname))
+            U prihvatilištu
+            @elseif($animal->status_id == 1 && empty($animal->vfirstname))
+            CNVR
+            @elseif($animal->status_id == 2 && empty($animal->vfirstname))
+            Uginulo
+            @elseif(!empty($animal->vfirstname))
+            Udomljeno
+            @endif</a>
+        </li>
+        <li class="list-group-item">
           <b>Pol</b> <a class="pull-right">
             @if($animal->gender == 1)
             <option value="1">Mužijak</option>
@@ -112,7 +124,7 @@ desired effect
   <!-- About Me Box -->
   <!-- /.box -->
 </div>
-    
+
 @endforeach
 
 </div>
