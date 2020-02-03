@@ -78,7 +78,7 @@
               @foreach ($inazils as $inazil)
 
                 <tr role="row" class="odd">
-                  <td><img src="{{ asset('storage/'.$animal->picture) }}" width="50px" height="50px"/></td>
+                  <td><img src="{{ asset('storage/'.$inazil->picture) }}" width="50px" height="50px"/></td>
                   @can('isAdmin')<td class="hidden-xs">{{ $inazil->pname }}</td>@endcan
                   <td class="sorting_1">{{ $inazil->dname }}</td>
                   <td class="hidden-xs">{{ $inazil->chip }}</td>
@@ -103,7 +103,7 @@
                     @endif
                   </td>@endif
                   <td>
-                    <form class="row" method="POST" action="{{ route('animals.destroy', ['id' => $animal->id]) }}" onsubmit = "return confirm('Are you sure?')">
+                    <form class="row" method="POST" action="{{ route('animals.destroy', ['id' => $inazil->id]) }}" onsubmit = "return confirm('Are you sure?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
                         <a href="{{ route('animals.edit', ['id' => $inazil->id]) }}" class="btn btn-warning col-sm-4 col-xs-8  btn-margin">

@@ -41,7 +41,7 @@ public function __construct()
     {
       $count = DB::table('animals')->count();
       $users = Auth::id();
-      $inazils = DB::table('animals')->whereRaw('vfirstname = ""')->orderByRaw('id DESC')->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
+      $inazils = DB::table('animals')->whereRaw('status_id = 0')->orderByRaw('id DESC')->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'text as text')
       ->paginate(5);
 
