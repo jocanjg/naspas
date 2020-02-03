@@ -301,7 +301,7 @@ desired effect
 
                 <div class="info-box-content">
                   <span class="info-box-text">Udomljeno</span>
-                  <span class="info-box-number">{{ $udomljen }}</span>
+                  <span class="info-box-number">{{ $udomljen }}</span>                  
                 </div>
                 <!-- /.info-box-content -->
               </div></a>

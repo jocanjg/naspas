@@ -75,38 +75,38 @@
               </tr>
             </thead>
             <tbody>
-              @foreach ($animals as $animal)
+              @foreach ($inazils as $inazil)
 
                 <tr role="row" class="odd">
                   <td><img src="{{ asset('storage/'.$animal->picture) }}" width="50px" height="50px"/></td>
-                  @can('isAdmin')<td class="hidden-xs">{{ $animal->pname }}</td>@endcan
-                  <td class="sorting_1">{{ $animal->dname }}</td>
-                  <td class="hidden-xs">{{ $animal->chip }}</td>
-                  <td class="hidden-xs">{{ $animal->date}}</td>
-                  <td class="hidden-xs">{{ $animal->age}} god</td>
+                  @can('isAdmin')<td class="hidden-xs">{{ $inazil->pname }}</td>@endcan
+                  <td class="sorting_1">{{ $inazil->dname }}</td>
+                  <td class="hidden-xs">{{ $inazil->chip }}</td>
+                  <td class="hidden-xs">{{ $inazil->date}}</td>
+                  <td class="hidden-xs">{{ $inazil->age}} god</td>
                   <td class="hidden-xs">
-                    @if($animal->status_id == 0 && empty($animal->vfirstname))
+                    @if($inazil->status_id == 0 && empty($inazil->vfirstname))
                     U prihvatilištu
-                    @elseif($animal->status_id == 1 && empty($animal->vfirstname))
+                    @elseif($inazil->status_id == 1 && empty($inazil->vfirstname))
                     CNVR
-                    @elseif($animal->status_id == 2 && empty($animal->vfirstname))
+                    @elseif($inazil->status_id == 2 && empty($inazil->vfirstname))
                     Uginulo
-                    @elseif(!empty($animal->vfirstname))
+                    @elseif(!empty($inazil->vfirstname))
                     Udomljeno
                     @endif
                   </td>
                   @if( Gate::check('isAdmin') || Gate::check('isAuthor') )<td class="hidden-xs">
-                    @if(!empty($animal->vaddress))
-                    {{ $animal->vaddress}}
+                    @if(!empty($inazil->vaddress))
+                    {{ $inazil->vaddress}}
                     @else
-                    {{ $animal->address}}
+                    {{ $inazil->address}}
                     @endif
                   </td>@endif
                   <td>
                     <form class="row" method="POST" action="{{ route('animals.destroy', ['id' => $animal->id]) }}" onsubmit = "return confirm('Are you sure?')">
                         <input type="hidden" name="_method" value="DELETE">
                         <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                        <a href="{{ route('animals.edit', ['id' => $animal->id]) }}" class="btn btn-warning col-sm-4 col-xs-8  btn-margin">
+                        <a href="{{ route('animals.edit', ['id' => $inazil->id]) }}" class="btn btn-warning col-sm-4 col-xs-8  btn-margin">
                         Pogledaj
                         </a>
 @can('isAdmin')

@@ -41,7 +41,9 @@ public function __construct()
     {
       $count = DB::table('animals')->count();
       $users = Auth::id();
-
+      $inazils = DB::table('animals')->whereRaw('vfirstname = ""')->orderByRaw('id DESC')->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
+      ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'text as text')
+      ->paginate(5);
 
 
 
@@ -49,7 +51,7 @@ public function __construct()
       ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'text as text')
       ->paginate(5);
-      return view('animals/index', ['animals' => $animals, 'count' => $count, 'users' => $users]);
+      return view('animals/index', ['animals' => $animals, 'count' => $count, 'users' => $users,'inazils' => $inazils]);
     }
 
 
