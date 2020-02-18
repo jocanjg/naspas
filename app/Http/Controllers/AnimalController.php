@@ -42,16 +42,18 @@ public function __construct()
       $count = DB::table('animals')->count();
       $users = Auth::id();
 
+      $udomljen = DB::table('animals')->whereRaw('vfirstname <> ""')->get()->count();
+      $cnvr = DB::table('animals')->whereRaw('status_id = 1')->get()->count();
+      $count = DB::table('animals')->count();
 
 
 
-    $animals = DB::table('animals')->whereRaw('vfirstname <> ""')->orderByRaw('id DESC')
+    $animals = DB::table('animals')->whereNull('status_id')->orderByRaw('id DESC')
       ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'text as text')
       ->paginate(5);
-    $this->total = $animals;
-    $totals = $this->total;
-      return view('animals/index', ['animals' => $animals, 'count' => $count, 'users' => $users, 'totals' => $totals]);
+
+      return view('animals/index', ['animals' => $animals, 'count' => $count, 'users' => $users]);
     }
 
 
