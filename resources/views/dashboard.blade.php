@@ -91,7 +91,7 @@ desired effect
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>{{ $count }}</h3>
+              <h3>{{ $total }}</h3>
 
               <p>Ukupan broj životinja</p>
             </div>
@@ -301,7 +301,7 @@ desired effect
 
                 <div class="info-box-content">
                   <span class="info-box-text">Udomljeno</span>
-                  <span class="info-box-number">{{ $udomljen }}</span>                  
+                  <span class="info-box-number">{{ $udomljen }}</span>
                 </div>
                 <!-- /.info-box-content -->
               </div></a>

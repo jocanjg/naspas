@@ -67,7 +67,7 @@ public function __construct()
       ->paginate(10);
       $capacitet = 200;
       $rez= ($total * 100) / $capacitet;
-      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen, 'cnvr' =>$cnvr]);
+      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen, 'cnvr' =>$cnvr, 'total'=>$total]);
 
     }
 
