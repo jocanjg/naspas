@@ -58,6 +58,7 @@ public function __construct()
       $udomljen = DB::table('animals')->whereRaw('vfirstname <> ""')->get()->count();
       $cnvr = DB::table('animals')->whereRaw('status_id = 1')->get()->count();
       $count = DB::table('animals')->count();
+      $total = $count - $cnvr - $udomljen;
       $cusers = DB::table('users')->count();
       $users = User::paginate(5);
       $animals = DB::table('animals')->orderByRaw('id DESC')
@@ -65,7 +66,7 @@ public function __construct()
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id')
       ->paginate(10);
       $capacitet = 200;
-      $rez= ($count * 100) / $capacitet;
+      $rez= ($total * 100) / $capacitet;
       return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen, 'cnvr' =>$cnvr]);
 
     }
