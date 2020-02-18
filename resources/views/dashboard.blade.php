@@ -93,7 +93,7 @@ desired effect
             <div class="inner">
               <h3>{{ $total }}</h3>
 
-              <p>Ukupan broj životinja</p>
+              <p>Ukupan broj životinja <br>u prihvatilištu</p>
             </div>
             <div class="icon">
               <i class="ion ion-heart"></i>
@@ -124,9 +124,9 @@ desired effect
           <!-- small box -->
           <div class="small-box bg-aqua">
             <div class="inner">
-              <h3>{{ Counter::allHits() }}</h3>
+              <h3>{{ $count }}</h3>
 
-              <p>Broj pregleda</p>
+              <p>Ukupan broj u sistemu</p>
             </div>
             <div class="icon">
               <i class="ion ion-pie-graph"></i>
