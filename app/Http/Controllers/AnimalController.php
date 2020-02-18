@@ -49,7 +49,9 @@ public function __construct()
       ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'text as text')
       ->paginate(5);
-      return view('animals/index', ['animals' => $animals, 'count' => $count, 'users' => $users]);
+    $this->total = $animals;
+    $totals = $this->total;
+      return view('animals/index', ['animals' => $animals, 'count' => $count, 'users' => $users, 'totals' => $totals]);
     }
 
 

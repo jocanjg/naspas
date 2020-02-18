@@ -8,7 +8,7 @@
 
         <div class="col-sm-4">
           <h3 class="box-title">Lista životinja</h3>
-          <p>Pretraži bazu pomoću čipa</p>
+          <p>Pretraži bazu pomoću čipa _{{ $totals}}_</p>
           <!-- <li>U slučaju da ne postoji traženi pas ili mačka, kontktiraj lokalno prihvatilište ili azil</li> -->
 
 
