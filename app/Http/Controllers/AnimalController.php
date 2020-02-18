@@ -20,7 +20,7 @@ use PDF;
 
 class AnimalController extends Controller
 {
-
+  private   $total;
   /**
  * Create a new controller instance.
  *
@@ -45,7 +45,7 @@ public function __construct()
 
 
 
-      $animals = DB::table('animals')->whereRaw('vfirstname <> ""')->orderByRaw('id DESC')
+    $animals = DB::table('animals')->whereRaw('vfirstname <> ""')->orderByRaw('id DESC')
       ->leftJoin('locations', 'animals.location_id', '=', 'locations.id')
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id', 'text as text')
       ->paginate(5);
@@ -58,7 +58,7 @@ public function __construct()
       $udomljen = DB::table('animals')->whereRaw('vfirstname <> ""')->get()->count();
       $cnvr = DB::table('animals')->whereRaw('status_id = 1')->get()->count();
       $count = DB::table('animals')->count();
-      $total = $count - $cnvr - $udomljen;
+      $this->total = $count - $cnvr - $udomljen;
       $cusers = DB::table('users')->count();
       $users = User::paginate(5);
       $animals = DB::table('animals')->orderByRaw('id DESC')
@@ -66,8 +66,9 @@ public function __construct()
       ->select('animals.*', 'animals.dname as dname', 'animals.pname as pname', 'animals.address as address', 'location as location_id')
       ->paginate(10);
       $capacitet = 200;
-      $rez= ($total * 100) / $capacitet;
-      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen, 'cnvr' =>$cnvr, 'total'=>$total]);
+      $rez= ($this->total * 100) / $capacitet;
+      $totals = $this->total;
+      return view('dashboard', ['count' => $count, 'animals' => $animals, 'cusers' => $cusers, 'users' => $users, 'rez' => $rez, 'udomljen' => $udomljen, 'cnvr' =>$cnvr, 'totals'=>$totals]);
 
     }
 
